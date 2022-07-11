@@ -14,7 +14,6 @@
         <property id="7143730616122272700" name="description" index="ibOEp" />
         <property id="7143730616122272698" name="title" index="ibOEv" />
         <property id="1474076785776556229" name="visitScore" index="37E873" />
-        <property id="1474076785776556233" name="visited" index="37E87f" />
         <reference id="7143730616122272684" name="N" index="ibOE9" />
         <reference id="7143730616122272686" name="S" index="ibOEb" />
         <reference id="7143730616122272693" name="E" index="ibOEg" />
@@ -36,15 +35,14 @@
   <node concept="ia1vw" id="6czCilL3vVR">
     <property role="TrG5h" value="foo" />
     <node concept="ibODn" id="6czCilL3vVS" role="ibOEq">
-      <property role="37FrDC" value="19" />
+      <property role="37FrDC" value="0" />
       <ref role="2c9o49" node="6czCilL3vVT" resolve="house" />
-      <ref role="ibmbr" node="6czCilL3vVY" resolve="cliff base" />
+      <ref role="ibmbr" node="6czCilL3vVT" resolve="house" />
       <node concept="ibODm" id="6czCilL3vVT" role="ibOEf">
         <property role="TrG5h" value="house" />
         <property role="ibOEv" value="south of house" />
         <property role="ibOEp" value="An old farmhouse ..." />
         <property role="37E873" value="0" />
-        <property role="37E87f" value="true" />
         <ref role="ibOEb" node="6czCilL3vVV" resolve="y" />
         <ref role="ibOEg" node="2bTJ7AIJ3Bg" resolve="field" />
         <ref role="ibOEk" node="2bTJ7AIJ3Bl" resolve="hedge" />
@@ -54,7 +52,6 @@
         <property role="ibOEv" value="grassy field" />
         <property role="ibOEp" value="A lush field of grass ..." />
         <property role="37E873" value="5" />
-        <property role="37E87f" value="true" />
         <ref role="ibOEb" node="6czCilL3vVV" resolve="lakeside" />
         <ref role="ibOEg" node="6czCilL3vVY" resolve="cliffs" />
         <ref role="ibOEk" node="6czCilL3vVT" resolve="house" />
@@ -64,7 +61,6 @@
         <property role="ibOEv" value="lakeside" />
         <property role="ibOEp" value="To the south is a frigid mountain lake ..." />
         <property role="37E873" value="3" />
-        <property role="37E87f" value="true" />
         <ref role="ibOE9" node="6czCilL3vVT" resolve="house" />
         <ref role="ibOEg" node="2bTJ7AIJ3Bg" resolve="field" />
         <ref role="ibOEk" node="2bTJ7AIJ3Bl" resolve="hedge" />
@@ -74,7 +70,6 @@
         <property role="ibOEv" value="east of hedge" />
         <property role="ibOEp" value="To the west is a tall thick hedge ..." />
         <property role="37E873" value="2" />
-        <property role="37E87f" value="true" />
         <ref role="ibOEg" node="6czCilL3vVT" resolve="house" />
         <ref role="ibOEb" node="6czCilL3vVV" resolve="lakeside" />
       </node>
@@ -83,7 +78,6 @@
         <property role="ibOEv" value="base of cliffs" />
         <property role="ibOEp" value="Sheer cliffs rise up towards the mountain peak ..." />
         <property role="37E873" value="9" />
-        <property role="37E87f" value="true" />
         <ref role="ibOEb" node="6czCilL3vVV" resolve="y" />
         <ref role="ibOEk" node="2bTJ7AIJ3Bg" resolve="field" />
       </node>
