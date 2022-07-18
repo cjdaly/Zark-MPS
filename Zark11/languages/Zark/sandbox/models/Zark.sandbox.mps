@@ -24,6 +24,11 @@
         <reference id="2520252697301237104" name="start" index="2c9o49" />
         <reference id="7143730616122393598" name="location" index="ibmbr" />
         <child id="7143730616122272682" name="areas" index="ibOEf" />
+        <child id="1615862684670092976" name="items" index="3VZlgW" />
+      </concept>
+      <concept id="1615862684670041758" name="Zark.structure.Item" flags="ng" index="3VZqKi">
+        <reference id="1615862684670041761" name="currentArea" index="3VZqKH" />
+        <reference id="1615862684670041763" name="homeArea" index="3VZqKJ" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -38,6 +43,16 @@
       <property role="37FrDC" value="0" />
       <ref role="2c9o49" node="6czCilL3vVT" resolve="house" />
       <ref role="ibmbr" node="6czCilL3vVT" resolve="house" />
+      <node concept="3VZqKi" id="1pGGCNH_fTs" role="3VZlgW">
+        <property role="TrG5h" value="sword" />
+        <ref role="3VZqKJ" node="6czCilL3vVY" resolve="cliff base" />
+        <ref role="3VZqKH" node="6czCilL3vVY" resolve="cliff base" />
+      </node>
+      <node concept="3VZqKi" id="1pGGCNH_fTu" role="3VZlgW">
+        <property role="TrG5h" value="cup" />
+        <ref role="3VZqKJ" node="6czCilL3vVV" resolve="lakeside" />
+        <ref role="3VZqKH" node="6czCilL3vVV" resolve="lakeside" />
+      </node>
       <node concept="ibODm" id="6czCilL3vVT" role="ibOEf">
         <property role="TrG5h" value="house" />
         <property role="ibOEv" value="south of house" />

@@ -68,6 +68,13 @@
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="6czCilL3eHN" resolve="Area" />
     </node>
+    <node concept="1TJgyj" id="1pGGCNH$uqK" role="1TKVEi">
+      <property role="IQ2ns" value="1615862684670092976" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="items" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="1pGGCNH$hUu" resolve="Item" />
+    </node>
     <node concept="1TJgyj" id="6czCilL3GfY" role="1TKVEi">
       <property role="IQ2ns" value="7143730616122393598" />
       <property role="20kJfa" value="location" />
@@ -132,6 +139,24 @@
       <property role="IQ2nx" value="1474076785776556233" />
       <property role="TrG5h" value="visited" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1pGGCNH$hUu">
+    <property role="EcuMT" value="1615862684670041758" />
+    <property role="TrG5h" value="Item" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="PrWs8" id="1pGGCNH$hUv" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1TJgyj" id="1pGGCNH$hUx" role="1TKVEi">
+      <property role="IQ2ns" value="1615862684670041761" />
+      <property role="20kJfa" value="currentArea" />
+      <ref role="20lvS9" node="6czCilL3eHN" resolve="Area" />
+    </node>
+    <node concept="1TJgyj" id="1pGGCNH$hUz" role="1TKVEi">
+      <property role="IQ2ns" value="1615862684670041763" />
+      <property role="20kJfa" value="homeArea" />
+      <ref role="20lvS9" node="6czCilL3eHN" resolve="Area" />
     </node>
   </node>
 </model>
