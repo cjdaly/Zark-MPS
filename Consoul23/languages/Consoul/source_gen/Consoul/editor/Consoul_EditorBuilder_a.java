@@ -12,29 +12,6 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
-import jetbrains.mps.lang.editor.cellProviders.SReferenceCellProvider;
-import jetbrains.mps.editor.runtime.impl.CellUtil;
-import jetbrains.mps.nodeEditor.cellMenu.SReferenceSubstituteInfo;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import java.util.Objects;
-import jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor;
-import jetbrains.mps.openapi.editor.update.AttributeKind;
-import org.jetbrains.mps.openapi.language.SProperty;
-import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.cells.SPropertyAccessor;
-import jetbrains.mps.nodeEditor.cellMenu.SPropertySubstituteInfo;
-import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -43,6 +20,21 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SEmptyContainmentSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import org.jetbrains.mps.openapi.language.SProperty;
+import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.SPropertyAccessor;
+import jetbrains.mps.nodeEditor.cellMenu.SPropertySubstituteInfo;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
+import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
+import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
 
@@ -71,9 +63,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.setBig(true);
     setCellContext(editorCell);
     editorCell.addEditorCell(createCollection_1());
-    editorCell.addEditorCell(createConstant_4());
-    editorCell.addEditorCell(createCollection_14());
-    editorCell.addEditorCell(createCollection_15());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createCollection_2());
+    editorCell.addEditorCell(createCollection_3());
     return editorCell;
   }
   private EditorCell createCollection_1() {
@@ -82,1145 +74,85 @@ import org.jetbrains.mps.openapi.language.SConcept;
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createCollection_2());
-    editorCell.addEditorCell(createCollection_5());
-    editorCell.addEditorCell(createCollection_8());
-    editorCell.addEditorCell(createCollection_11());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createCollection_2() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_c73viz_a0a");
-    editorCell.addEditorCell(createRefCell_0());
-    editorCell.addEditorCell(createConstant_0());
-    editorCell.addEditorCell(createRefCell_2());
-    return editorCell;
+  private EditorCell createRefNode_0() {
+    SingleRoleCellProvider provider = new historySingleRoleHandler_c73viz_a0a(myNode, LINKS.history$OJz9, getEditorContext());
+    return provider.createCell();
   }
-  private EditorCell createRefCell_0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, LINKS.history$OJz9, CONCEPTS.History$2X, "history", getEditorContext()) {
-
-      @Override
-      protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
-        EditorCell cell = new Inline_Builder0(getEditorContext(), myNode, effectiveNode).createCell();
-        installDeleteActions_notnull(cell);
-        return cell;
-      }
-    };
-    provider.setNoTargetText("<no history>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(getEditorContext());
-    if (editorCell.getSRole() == null) {
-      editorCell.setReferenceCell(true);
-      editorCell.setSRole(LINKS.history$OJz9);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
-    } else
-    return editorCell;
-  }
-  /*package*/ static class Inline_Builder0 extends AbstractEditorBuilder {
+  private static class historySingleRoleHandler_c73viz_a0a extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
-    private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
-      super(context);
-      myReferencingNode = referencingNode;
-      myNode = node;
+    public historySingleRoleHandler_c73viz_a0a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
 
-    /*package*/ EditorCell createCell() {
-      return createCollection_3();
-    }
-
-    @NotNull
     @Override
+    @NotNull
     public SNode getNode() {
       return myNode;
     }
 
-    private EditorCell createCollection_3() {
-      EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-      editorCell.setCellId("Collection_c73viz_a0a0a0");
-      editorCell.addEditorCell(createRefCell_1());
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.history$OJz9, child));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.history$OJz9, child));
+      installCellInfo(child, editorCell, false);
       return editorCell;
     }
-    private EditorCell createRefCell_1() {
-      final SReferenceLink referenceLink = LINKS.entry_4$fZcZ;
-      SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
-        protected EditorCell createReferenceCell(final SNode targetNode) {
-          EditorCell cell = getUpdateSession().updateReferencedNodeCell(() -> new Inline_Builder1(getEditorContext(), getNode(), targetNode).createCell(), targetNode, LINKS.entry_4$fZcZ);
-          CellUtil.setupIDeprecatableStyles(targetNode, cell);
-          setSemanticNodeToCells(cell, getNode());
-          installDeleteActions_nullable_reference(cell);
-          return cell;
-        }
-      };
 
-      provider.setNoTargetText("<no entry_4>");
-      EditorCell editorCell = provider.createCell();
 
+
+    private void installCellInfo(SNode child, EditorCell editorCell, boolean isEmpty) {
+      if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
+        editorCell.setSubstituteInfo((isEmpty ? new SEmptyContainmentSubstituteInfo(editorCell) : new SChildSubstituteInfo(editorCell)));
+      }
       if (editorCell.getSRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setSRole(LINKS.entry_4$fZcZ);
+        editorCell.setSRole(LINKS.history$OJz9);
       }
-      editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
-      Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.LinkAttribute$v_);
-      Iterable<SNode> currentReferenceAttributes = Sequence.fromIterable(referenceAttributes).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return Objects.equals(LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(it), referenceLink);
-        }
-      });
-      if (Sequence.fromIterable(currentReferenceAttributes).isNotEmpty()) {
-        EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-        return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentReferenceAttributes).first(), AttributeKind.REFERENCE, editorCell);
-      } else
-      return editorCell;
     }
-    /*package*/ static class Inline_Builder1 extends AbstractEditorBuilder {
-      @NotNull
-      private SNode myNode;
-      private SNode myReferencingNode;
-
-      /*package*/ Inline_Builder1(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
-        super(context);
-        myReferencingNode = referencingNode;
-        myNode = node;
+    @Override
+    protected EditorCell createEmptyCell() {
+      getCellFactory().pushCellContext();
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.history$OJz9));
+      try {
+        EditorCell editorCell = super.createEmptyCell();
+        editorCell.setCellId("empty_history");
+        installCellInfo(null, editorCell, true);
+        setCellContext(editorCell);
+        return editorCell;
+      } finally {
+        getCellFactory().popCellContext();
       }
-
-      /*package*/ EditorCell createCell() {
-        return createProperty_0();
-      }
-
-      @NotNull
-      @Override
-      public SNode getNode() {
-        return myNode;
-      }
-
-      private EditorCell createProperty_0() {
-        getCellFactory().pushCellContext();
-        try {
-          final SProperty property = PROPS.query$8Y9$;
-          getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
-          EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, true, false), myNode);
-          editorCell.setDefaultText("<no query>");
-          editorCell.setCellId("property_query");
-          editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
-          setCellContext(editorCell);
-          Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
-          Iterable<SNode> currentPropertyAttributes = Sequence.fromIterable(propertyAttributes).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return Objects.equals(PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(it), property);
-            }
-          });
-          if (Sequence.fromIterable(currentPropertyAttributes).isNotEmpty()) {
-            EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-            return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentPropertyAttributes).first(), AttributeKind.PROPERTY, editorCell);
-          } else
-          return editorCell;
-        } finally {
-          getCellFactory().popCellContext();
-        }
-      }
+    }
+    protected String getNoTargetText() {
+      return "<no history>";
     }
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "~~>");
-    editorCell.setCellId("Constant_c73viz_b0a0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createRefCell_2() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, LINKS.history$OJz9, CONCEPTS.History$2X, "history", getEditorContext()) {
-
-      @Override
-      protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
-        EditorCell cell = new Inline_Builder2(getEditorContext(), myNode, effectiveNode).createCell();
-        installDeleteActions_notnull(cell);
-        return cell;
-      }
-    };
-    provider.setNoTargetText("<no history>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(getEditorContext());
-    if (editorCell.getSRole() == null) {
-      editorCell.setReferenceCell(true);
-      editorCell.setSRole(LINKS.history$OJz9);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
-    } else
-    return editorCell;
-  }
-  /*package*/ static class Inline_Builder2 extends AbstractEditorBuilder {
-    @NotNull
-    private SNode myNode;
-    private SNode myReferencingNode;
-
-    /*package*/ Inline_Builder2(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
-      super(context);
-      myReferencingNode = referencingNode;
-      myNode = node;
-    }
-
-    /*package*/ EditorCell createCell() {
-      return createCollection_4();
-    }
-
-    @NotNull
-    @Override
-    public SNode getNode() {
-      return myNode;
-    }
-
-    private EditorCell createCollection_4() {
-      EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-      editorCell.setCellId("Collection_c73viz_a0c0a0");
-      editorCell.addEditorCell(createRefCell_3());
-      return editorCell;
-    }
-    private EditorCell createRefCell_3() {
-      final SReferenceLink referenceLink = LINKS.entry_4$fZcZ;
-      SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
-        protected EditorCell createReferenceCell(final SNode targetNode) {
-          EditorCell cell = getUpdateSession().updateReferencedNodeCell(() -> new Inline_Builder3(getEditorContext(), getNode(), targetNode).createCell(), targetNode, LINKS.entry_4$fZcZ);
-          CellUtil.setupIDeprecatableStyles(targetNode, cell);
-          setSemanticNodeToCells(cell, getNode());
-          installDeleteActions_nullable_reference(cell);
-          return cell;
-        }
-      };
-
-      provider.setNoTargetText("<no entry_4>");
-      EditorCell editorCell = provider.createCell();
-
-      if (editorCell.getSRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setSRole(LINKS.entry_4$fZcZ);
-      }
-      editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
-      Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.LinkAttribute$v_);
-      Iterable<SNode> currentReferenceAttributes = Sequence.fromIterable(referenceAttributes).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return Objects.equals(LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(it), referenceLink);
-        }
-      });
-      if (Sequence.fromIterable(currentReferenceAttributes).isNotEmpty()) {
-        EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-        return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentReferenceAttributes).first(), AttributeKind.REFERENCE, editorCell);
-      } else
-      return editorCell;
-    }
-    /*package*/ static class Inline_Builder3 extends AbstractEditorBuilder {
-      @NotNull
-      private SNode myNode;
-      private SNode myReferencingNode;
-
-      /*package*/ Inline_Builder3(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
-        super(context);
-        myReferencingNode = referencingNode;
-        myNode = node;
-      }
-
-      /*package*/ EditorCell createCell() {
-        return createProperty_1();
-      }
-
-      @NotNull
-      @Override
-      public SNode getNode() {
-        return myNode;
-      }
-
-      private EditorCell createProperty_1() {
-        getCellFactory().pushCellContext();
-        try {
-          final SProperty property = PROPS.response$93yV;
-          getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
-          EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, true, false), myNode);
-          editorCell.setDefaultText("<no response>");
-          editorCell.setCellId("property_response");
-          editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
-          setCellContext(editorCell);
-          Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
-          Iterable<SNode> currentPropertyAttributes = Sequence.fromIterable(propertyAttributes).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return Objects.equals(PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(it), property);
-            }
-          });
-          if (Sequence.fromIterable(currentPropertyAttributes).isNotEmpty()) {
-            EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-            return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentPropertyAttributes).first(), AttributeKind.PROPERTY, editorCell);
-          } else
-          return editorCell;
-        } finally {
-          getCellFactory().popCellContext();
-        }
-      }
-    }
-  }
-  private EditorCell createCollection_5() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_c73viz_b0a");
-    editorCell.addEditorCell(createRefCell_4());
-    editorCell.addEditorCell(createConstant_1());
-    editorCell.addEditorCell(createRefCell_6());
-    return editorCell;
-  }
-  private EditorCell createRefCell_4() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, LINKS.history$OJz9, CONCEPTS.History$2X, "history", getEditorContext()) {
-
-      @Override
-      protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
-        EditorCell cell = new Inline_Builder4(getEditorContext(), myNode, effectiveNode).createCell();
-        installDeleteActions_notnull(cell);
-        return cell;
-      }
-    };
-    provider.setNoTargetText("<no history>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(getEditorContext());
-    if (editorCell.getSRole() == null) {
-      editorCell.setReferenceCell(true);
-      editorCell.setSRole(LINKS.history$OJz9);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
-    } else
-    return editorCell;
-  }
-  /*package*/ static class Inline_Builder4 extends AbstractEditorBuilder {
-    @NotNull
-    private SNode myNode;
-    private SNode myReferencingNode;
-
-    /*package*/ Inline_Builder4(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
-      super(context);
-      myReferencingNode = referencingNode;
-      myNode = node;
-    }
-
-    /*package*/ EditorCell createCell() {
-      return createCollection_6();
-    }
-
-    @NotNull
-    @Override
-    public SNode getNode() {
-      return myNode;
-    }
-
-    private EditorCell createCollection_6() {
-      EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-      editorCell.setCellId("Collection_c73viz_a0a1a0");
-      editorCell.addEditorCell(createRefCell_5());
-      return editorCell;
-    }
-    private EditorCell createRefCell_5() {
-      final SReferenceLink referenceLink = LINKS.entry_3$fT6_;
-      SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
-        protected EditorCell createReferenceCell(final SNode targetNode) {
-          EditorCell cell = getUpdateSession().updateReferencedNodeCell(() -> new Inline_Builder5(getEditorContext(), getNode(), targetNode).createCell(), targetNode, LINKS.entry_3$fT6_);
-          CellUtil.setupIDeprecatableStyles(targetNode, cell);
-          setSemanticNodeToCells(cell, getNode());
-          installDeleteActions_nullable_reference(cell);
-          return cell;
-        }
-      };
-
-      provider.setNoTargetText("<no entry_3>");
-      EditorCell editorCell = provider.createCell();
-
-      if (editorCell.getSRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setSRole(LINKS.entry_3$fT6_);
-      }
-      editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
-      Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.LinkAttribute$v_);
-      Iterable<SNode> currentReferenceAttributes = Sequence.fromIterable(referenceAttributes).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return Objects.equals(LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(it), referenceLink);
-        }
-      });
-      if (Sequence.fromIterable(currentReferenceAttributes).isNotEmpty()) {
-        EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-        return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentReferenceAttributes).first(), AttributeKind.REFERENCE, editorCell);
-      } else
-      return editorCell;
-    }
-    /*package*/ static class Inline_Builder5 extends AbstractEditorBuilder {
-      @NotNull
-      private SNode myNode;
-      private SNode myReferencingNode;
-
-      /*package*/ Inline_Builder5(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
-        super(context);
-        myReferencingNode = referencingNode;
-        myNode = node;
-      }
-
-      /*package*/ EditorCell createCell() {
-        return createProperty_2();
-      }
-
-      @NotNull
-      @Override
-      public SNode getNode() {
-        return myNode;
-      }
-
-      private EditorCell createProperty_2() {
-        getCellFactory().pushCellContext();
-        try {
-          final SProperty property = PROPS.query$8Y9$;
-          getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
-          EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, true, false), myNode);
-          editorCell.setDefaultText("<no query>");
-          editorCell.setCellId("property_query1");
-          editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
-          setCellContext(editorCell);
-          Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
-          Iterable<SNode> currentPropertyAttributes = Sequence.fromIterable(propertyAttributes).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return Objects.equals(PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(it), property);
-            }
-          });
-          if (Sequence.fromIterable(currentPropertyAttributes).isNotEmpty()) {
-            EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-            return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentPropertyAttributes).first(), AttributeKind.PROPERTY, editorCell);
-          } else
-          return editorCell;
-        } finally {
-          getCellFactory().popCellContext();
-        }
-      }
-    }
-  }
-  private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "~~>");
-    editorCell.setCellId("Constant_c73viz_b1a0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createRefCell_6() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, LINKS.history$OJz9, CONCEPTS.History$2X, "history", getEditorContext()) {
-
-      @Override
-      protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
-        EditorCell cell = new Inline_Builder6(getEditorContext(), myNode, effectiveNode).createCell();
-        installDeleteActions_notnull(cell);
-        return cell;
-      }
-    };
-    provider.setNoTargetText("<no history>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(getEditorContext());
-    if (editorCell.getSRole() == null) {
-      editorCell.setReferenceCell(true);
-      editorCell.setSRole(LINKS.history$OJz9);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
-    } else
-    return editorCell;
-  }
-  /*package*/ static class Inline_Builder6 extends AbstractEditorBuilder {
-    @NotNull
-    private SNode myNode;
-    private SNode myReferencingNode;
-
-    /*package*/ Inline_Builder6(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
-      super(context);
-      myReferencingNode = referencingNode;
-      myNode = node;
-    }
-
-    /*package*/ EditorCell createCell() {
-      return createCollection_7();
-    }
-
-    @NotNull
-    @Override
-    public SNode getNode() {
-      return myNode;
-    }
-
-    private EditorCell createCollection_7() {
-      EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-      editorCell.setCellId("Collection_c73viz_a0c1a0");
-      editorCell.addEditorCell(createRefCell_7());
-      return editorCell;
-    }
-    private EditorCell createRefCell_7() {
-      final SReferenceLink referenceLink = LINKS.entry_3$fT6_;
-      SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
-        protected EditorCell createReferenceCell(final SNode targetNode) {
-          EditorCell cell = getUpdateSession().updateReferencedNodeCell(() -> new Inline_Builder7(getEditorContext(), getNode(), targetNode).createCell(), targetNode, LINKS.entry_3$fT6_);
-          CellUtil.setupIDeprecatableStyles(targetNode, cell);
-          setSemanticNodeToCells(cell, getNode());
-          installDeleteActions_nullable_reference(cell);
-          return cell;
-        }
-      };
-
-      provider.setNoTargetText("<no entry_3>");
-      EditorCell editorCell = provider.createCell();
-
-      if (editorCell.getSRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setSRole(LINKS.entry_3$fT6_);
-      }
-      editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
-      Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.LinkAttribute$v_);
-      Iterable<SNode> currentReferenceAttributes = Sequence.fromIterable(referenceAttributes).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return Objects.equals(LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(it), referenceLink);
-        }
-      });
-      if (Sequence.fromIterable(currentReferenceAttributes).isNotEmpty()) {
-        EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-        return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentReferenceAttributes).first(), AttributeKind.REFERENCE, editorCell);
-      } else
-      return editorCell;
-    }
-    /*package*/ static class Inline_Builder7 extends AbstractEditorBuilder {
-      @NotNull
-      private SNode myNode;
-      private SNode myReferencingNode;
-
-      /*package*/ Inline_Builder7(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
-        super(context);
-        myReferencingNode = referencingNode;
-        myNode = node;
-      }
-
-      /*package*/ EditorCell createCell() {
-        return createProperty_3();
-      }
-
-      @NotNull
-      @Override
-      public SNode getNode() {
-        return myNode;
-      }
-
-      private EditorCell createProperty_3() {
-        getCellFactory().pushCellContext();
-        try {
-          final SProperty property = PROPS.response$93yV;
-          getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
-          EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, true, false), myNode);
-          editorCell.setDefaultText("<no response>");
-          editorCell.setCellId("property_response1");
-          editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
-          setCellContext(editorCell);
-          Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
-          Iterable<SNode> currentPropertyAttributes = Sequence.fromIterable(propertyAttributes).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return Objects.equals(PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(it), property);
-            }
-          });
-          if (Sequence.fromIterable(currentPropertyAttributes).isNotEmpty()) {
-            EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-            return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentPropertyAttributes).first(), AttributeKind.PROPERTY, editorCell);
-          } else
-          return editorCell;
-        } finally {
-          getCellFactory().popCellContext();
-        }
-      }
-    }
-  }
-  private EditorCell createCollection_8() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_c73viz_c0a");
-    editorCell.addEditorCell(createRefCell_8());
-    editorCell.addEditorCell(createConstant_2());
-    editorCell.addEditorCell(createRefCell_10());
-    return editorCell;
-  }
-  private EditorCell createRefCell_8() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, LINKS.history$OJz9, CONCEPTS.History$2X, "history", getEditorContext()) {
-
-      @Override
-      protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
-        EditorCell cell = new Inline_Builder8(getEditorContext(), myNode, effectiveNode).createCell();
-        installDeleteActions_notnull(cell);
-        return cell;
-      }
-    };
-    provider.setNoTargetText("<no history>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(getEditorContext());
-    if (editorCell.getSRole() == null) {
-      editorCell.setReferenceCell(true);
-      editorCell.setSRole(LINKS.history$OJz9);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
-    } else
-    return editorCell;
-  }
-  /*package*/ static class Inline_Builder8 extends AbstractEditorBuilder {
-    @NotNull
-    private SNode myNode;
-    private SNode myReferencingNode;
-
-    /*package*/ Inline_Builder8(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
-      super(context);
-      myReferencingNode = referencingNode;
-      myNode = node;
-    }
-
-    /*package*/ EditorCell createCell() {
-      return createCollection_9();
-    }
-
-    @NotNull
-    @Override
-    public SNode getNode() {
-      return myNode;
-    }
-
-    private EditorCell createCollection_9() {
-      EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-      editorCell.setCellId("Collection_c73viz_a0a2a0");
-      editorCell.addEditorCell(createRefCell_9());
-      return editorCell;
-    }
-    private EditorCell createRefCell_9() {
-      final SReferenceLink referenceLink = LINKS.entry_2$fSax;
-      SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
-        protected EditorCell createReferenceCell(final SNode targetNode) {
-          EditorCell cell = getUpdateSession().updateReferencedNodeCell(() -> new Inline_Builder9(getEditorContext(), getNode(), targetNode).createCell(), targetNode, LINKS.entry_2$fSax);
-          CellUtil.setupIDeprecatableStyles(targetNode, cell);
-          setSemanticNodeToCells(cell, getNode());
-          installDeleteActions_nullable_reference(cell);
-          return cell;
-        }
-      };
-
-      provider.setNoTargetText("<no entry_2>");
-      EditorCell editorCell = provider.createCell();
-
-      if (editorCell.getSRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setSRole(LINKS.entry_2$fSax);
-      }
-      editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
-      Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.LinkAttribute$v_);
-      Iterable<SNode> currentReferenceAttributes = Sequence.fromIterable(referenceAttributes).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return Objects.equals(LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(it), referenceLink);
-        }
-      });
-      if (Sequence.fromIterable(currentReferenceAttributes).isNotEmpty()) {
-        EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-        return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentReferenceAttributes).first(), AttributeKind.REFERENCE, editorCell);
-      } else
-      return editorCell;
-    }
-    /*package*/ static class Inline_Builder9 extends AbstractEditorBuilder {
-      @NotNull
-      private SNode myNode;
-      private SNode myReferencingNode;
-
-      /*package*/ Inline_Builder9(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
-        super(context);
-        myReferencingNode = referencingNode;
-        myNode = node;
-      }
-
-      /*package*/ EditorCell createCell() {
-        return createProperty_4();
-      }
-
-      @NotNull
-      @Override
-      public SNode getNode() {
-        return myNode;
-      }
-
-      private EditorCell createProperty_4() {
-        getCellFactory().pushCellContext();
-        try {
-          final SProperty property = PROPS.query$8Y9$;
-          getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
-          EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, true, false), myNode);
-          editorCell.setDefaultText("<no query>");
-          editorCell.setCellId("property_query2");
-          editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
-          setCellContext(editorCell);
-          Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
-          Iterable<SNode> currentPropertyAttributes = Sequence.fromIterable(propertyAttributes).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return Objects.equals(PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(it), property);
-            }
-          });
-          if (Sequence.fromIterable(currentPropertyAttributes).isNotEmpty()) {
-            EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-            return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentPropertyAttributes).first(), AttributeKind.PROPERTY, editorCell);
-          } else
-          return editorCell;
-        } finally {
-          getCellFactory().popCellContext();
-        }
-      }
-    }
-  }
-  private EditorCell createConstant_2() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "~~>");
-    editorCell.setCellId("Constant_c73viz_b2a0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createRefCell_10() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, LINKS.history$OJz9, CONCEPTS.History$2X, "history", getEditorContext()) {
-
-      @Override
-      protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
-        EditorCell cell = new Inline_Builder10(getEditorContext(), myNode, effectiveNode).createCell();
-        installDeleteActions_notnull(cell);
-        return cell;
-      }
-    };
-    provider.setNoTargetText("<no history>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(getEditorContext());
-    if (editorCell.getSRole() == null) {
-      editorCell.setReferenceCell(true);
-      editorCell.setSRole(LINKS.history$OJz9);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
-    } else
-    return editorCell;
-  }
-  /*package*/ static class Inline_Builder10 extends AbstractEditorBuilder {
-    @NotNull
-    private SNode myNode;
-    private SNode myReferencingNode;
-
-    /*package*/ Inline_Builder10(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
-      super(context);
-      myReferencingNode = referencingNode;
-      myNode = node;
-    }
-
-    /*package*/ EditorCell createCell() {
-      return createCollection_10();
-    }
-
-    @NotNull
-    @Override
-    public SNode getNode() {
-      return myNode;
-    }
-
-    private EditorCell createCollection_10() {
-      EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-      editorCell.setCellId("Collection_c73viz_a0c2a0");
-      editorCell.addEditorCell(createRefCell_11());
-      return editorCell;
-    }
-    private EditorCell createRefCell_11() {
-      final SReferenceLink referenceLink = LINKS.entry_2$fSax;
-      SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
-        protected EditorCell createReferenceCell(final SNode targetNode) {
-          EditorCell cell = getUpdateSession().updateReferencedNodeCell(() -> new Inline_Builder11(getEditorContext(), getNode(), targetNode).createCell(), targetNode, LINKS.entry_2$fSax);
-          CellUtil.setupIDeprecatableStyles(targetNode, cell);
-          setSemanticNodeToCells(cell, getNode());
-          installDeleteActions_nullable_reference(cell);
-          return cell;
-        }
-      };
-
-      provider.setNoTargetText("<no entry_2>");
-      EditorCell editorCell = provider.createCell();
-
-      if (editorCell.getSRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setSRole(LINKS.entry_2$fSax);
-      }
-      editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
-      Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.LinkAttribute$v_);
-      Iterable<SNode> currentReferenceAttributes = Sequence.fromIterable(referenceAttributes).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return Objects.equals(LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(it), referenceLink);
-        }
-      });
-      if (Sequence.fromIterable(currentReferenceAttributes).isNotEmpty()) {
-        EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-        return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentReferenceAttributes).first(), AttributeKind.REFERENCE, editorCell);
-      } else
-      return editorCell;
-    }
-    /*package*/ static class Inline_Builder11 extends AbstractEditorBuilder {
-      @NotNull
-      private SNode myNode;
-      private SNode myReferencingNode;
-
-      /*package*/ Inline_Builder11(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
-        super(context);
-        myReferencingNode = referencingNode;
-        myNode = node;
-      }
-
-      /*package*/ EditorCell createCell() {
-        return createProperty_5();
-      }
-
-      @NotNull
-      @Override
-      public SNode getNode() {
-        return myNode;
-      }
-
-      private EditorCell createProperty_5() {
-        getCellFactory().pushCellContext();
-        try {
-          final SProperty property = PROPS.response$93yV;
-          getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
-          EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, true, false), myNode);
-          editorCell.setDefaultText("<no response>");
-          editorCell.setCellId("property_response2");
-          editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
-          setCellContext(editorCell);
-          Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
-          Iterable<SNode> currentPropertyAttributes = Sequence.fromIterable(propertyAttributes).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return Objects.equals(PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(it), property);
-            }
-          });
-          if (Sequence.fromIterable(currentPropertyAttributes).isNotEmpty()) {
-            EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-            return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentPropertyAttributes).first(), AttributeKind.PROPERTY, editorCell);
-          } else
-          return editorCell;
-        } finally {
-          getCellFactory().popCellContext();
-        }
-      }
-    }
-  }
-  private EditorCell createCollection_11() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_c73viz_d0a");
-    editorCell.addEditorCell(createRefCell_12());
-    editorCell.addEditorCell(createConstant_3());
-    editorCell.addEditorCell(createRefCell_14());
-    return editorCell;
-  }
-  private EditorCell createRefCell_12() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, LINKS.history$OJz9, CONCEPTS.History$2X, "history", getEditorContext()) {
-
-      @Override
-      protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
-        EditorCell cell = new Inline_Builder12(getEditorContext(), myNode, effectiveNode).createCell();
-        installDeleteActions_notnull(cell);
-        return cell;
-      }
-    };
-    provider.setNoTargetText("<no history>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(getEditorContext());
-    if (editorCell.getSRole() == null) {
-      editorCell.setReferenceCell(true);
-      editorCell.setSRole(LINKS.history$OJz9);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
-    } else
-    return editorCell;
-  }
-  /*package*/ static class Inline_Builder12 extends AbstractEditorBuilder {
-    @NotNull
-    private SNode myNode;
-    private SNode myReferencingNode;
-
-    /*package*/ Inline_Builder12(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
-      super(context);
-      myReferencingNode = referencingNode;
-      myNode = node;
-    }
-
-    /*package*/ EditorCell createCell() {
-      return createCollection_12();
-    }
-
-    @NotNull
-    @Override
-    public SNode getNode() {
-      return myNode;
-    }
-
-    private EditorCell createCollection_12() {
-      EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-      editorCell.setCellId("Collection_c73viz_a0a3a0");
-      editorCell.addEditorCell(createRefCell_13());
-      return editorCell;
-    }
-    private EditorCell createRefCell_13() {
-      final SReferenceLink referenceLink = LINKS.entry_1$fMy9;
-      SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
-        protected EditorCell createReferenceCell(final SNode targetNode) {
-          EditorCell cell = getUpdateSession().updateReferencedNodeCell(() -> new Inline_Builder13(getEditorContext(), getNode(), targetNode).createCell(), targetNode, LINKS.entry_1$fMy9);
-          CellUtil.setupIDeprecatableStyles(targetNode, cell);
-          setSemanticNodeToCells(cell, getNode());
-          installDeleteActions_nullable_reference(cell);
-          return cell;
-        }
-      };
-
-      provider.setNoTargetText("<no entry_1>");
-      EditorCell editorCell = provider.createCell();
-
-      if (editorCell.getSRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setSRole(LINKS.entry_1$fMy9);
-      }
-      editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
-      Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.LinkAttribute$v_);
-      Iterable<SNode> currentReferenceAttributes = Sequence.fromIterable(referenceAttributes).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return Objects.equals(LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(it), referenceLink);
-        }
-      });
-      if (Sequence.fromIterable(currentReferenceAttributes).isNotEmpty()) {
-        EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-        return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentReferenceAttributes).first(), AttributeKind.REFERENCE, editorCell);
-      } else
-      return editorCell;
-    }
-    /*package*/ static class Inline_Builder13 extends AbstractEditorBuilder {
-      @NotNull
-      private SNode myNode;
-      private SNode myReferencingNode;
-
-      /*package*/ Inline_Builder13(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
-        super(context);
-        myReferencingNode = referencingNode;
-        myNode = node;
-      }
-
-      /*package*/ EditorCell createCell() {
-        return createProperty_6();
-      }
-
-      @NotNull
-      @Override
-      public SNode getNode() {
-        return myNode;
-      }
-
-      private EditorCell createProperty_6() {
-        getCellFactory().pushCellContext();
-        try {
-          final SProperty property = PROPS.query$8Y9$;
-          getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
-          EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, true, false), myNode);
-          editorCell.setDefaultText("<no query>");
-          editorCell.setCellId("property_query3");
-          editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
-          setCellContext(editorCell);
-          Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
-          Iterable<SNode> currentPropertyAttributes = Sequence.fromIterable(propertyAttributes).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return Objects.equals(PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(it), property);
-            }
-          });
-          if (Sequence.fromIterable(currentPropertyAttributes).isNotEmpty()) {
-            EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-            return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentPropertyAttributes).first(), AttributeKind.PROPERTY, editorCell);
-          } else
-          return editorCell;
-        } finally {
-          getCellFactory().popCellContext();
-        }
-      }
-    }
-  }
-  private EditorCell createConstant_3() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "~~>");
-    editorCell.setCellId("Constant_c73viz_b3a0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createRefCell_14() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, LINKS.history$OJz9, CONCEPTS.History$2X, "history", getEditorContext()) {
-
-      @Override
-      protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
-        EditorCell cell = new Inline_Builder14(getEditorContext(), myNode, effectiveNode).createCell();
-        installDeleteActions_notnull(cell);
-        return cell;
-      }
-    };
-    provider.setNoTargetText("<no history>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(getEditorContext());
-    if (editorCell.getSRole() == null) {
-      editorCell.setReferenceCell(true);
-      editorCell.setSRole(LINKS.history$OJz9);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
-    } else
-    return editorCell;
-  }
-  /*package*/ static class Inline_Builder14 extends AbstractEditorBuilder {
-    @NotNull
-    private SNode myNode;
-    private SNode myReferencingNode;
-
-    /*package*/ Inline_Builder14(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
-      super(context);
-      myReferencingNode = referencingNode;
-      myNode = node;
-    }
-
-    /*package*/ EditorCell createCell() {
-      return createCollection_13();
-    }
-
-    @NotNull
-    @Override
-    public SNode getNode() {
-      return myNode;
-    }
-
-    private EditorCell createCollection_13() {
-      EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-      editorCell.setCellId("Collection_c73viz_a0c3a0");
-      editorCell.addEditorCell(createRefCell_15());
-      return editorCell;
-    }
-    private EditorCell createRefCell_15() {
-      final SReferenceLink referenceLink = LINKS.entry_1$fMy9;
-      SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
-        protected EditorCell createReferenceCell(final SNode targetNode) {
-          EditorCell cell = getUpdateSession().updateReferencedNodeCell(() -> new Inline_Builder15(getEditorContext(), getNode(), targetNode).createCell(), targetNode, LINKS.entry_1$fMy9);
-          CellUtil.setupIDeprecatableStyles(targetNode, cell);
-          setSemanticNodeToCells(cell, getNode());
-          installDeleteActions_nullable_reference(cell);
-          return cell;
-        }
-      };
-
-      provider.setNoTargetText("<no entry_1>");
-      EditorCell editorCell = provider.createCell();
-
-      if (editorCell.getSRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setSRole(LINKS.entry_1$fMy9);
-      }
-      editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
-      Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.LinkAttribute$v_);
-      Iterable<SNode> currentReferenceAttributes = Sequence.fromIterable(referenceAttributes).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return Objects.equals(LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(it), referenceLink);
-        }
-      });
-      if (Sequence.fromIterable(currentReferenceAttributes).isNotEmpty()) {
-        EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-        return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentReferenceAttributes).first(), AttributeKind.REFERENCE, editorCell);
-      } else
-      return editorCell;
-    }
-    /*package*/ static class Inline_Builder15 extends AbstractEditorBuilder {
-      @NotNull
-      private SNode myNode;
-      private SNode myReferencingNode;
-
-      /*package*/ Inline_Builder15(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
-        super(context);
-        myReferencingNode = referencingNode;
-        myNode = node;
-      }
-
-      /*package*/ EditorCell createCell() {
-        return createProperty_7();
-      }
-
-      @NotNull
-      @Override
-      public SNode getNode() {
-        return myNode;
-      }
-
-      private EditorCell createProperty_7() {
-        getCellFactory().pushCellContext();
-        try {
-          final SProperty property = PROPS.response$93yV;
-          getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
-          EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, true, false), myNode);
-          editorCell.setDefaultText("<no response>");
-          editorCell.setCellId("property_response3");
-          editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
-          setCellContext(editorCell);
-          Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
-          Iterable<SNode> currentPropertyAttributes = Sequence.fromIterable(propertyAttributes).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return Objects.equals(PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(it), property);
-            }
-          });
-          if (Sequence.fromIterable(currentPropertyAttributes).isNotEmpty()) {
-            EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-            return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentPropertyAttributes).first(), AttributeKind.PROPERTY, editorCell);
-          } else
-          return editorCell;
-        } finally {
-          getCellFactory().popCellContext();
-        }
-      }
-    }
-  }
-  private EditorCell createConstant_4() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "---------------------------------");
     editorCell.setCellId("Constant_c73viz_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_14() {
+  private EditorCell createCollection_2() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_c73viz_c0");
-    editorCell.addEditorCell(createConstant_5());
-    editorCell.addEditorCell(createProperty_8());
-    editorCell.addEditorCell(createConstant_6());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_2());
     return editorCell;
   }
-  private EditorCell createConstant_5() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Consoul! (");
     editorCell.setCellId("Constant_c73viz_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_8() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = PROPS.name$MnvL;
@@ -1245,30 +177,30 @@ import org.jetbrains.mps.openapi.language.SConcept;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_6() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ")");
     editorCell.setCellId("Constant_c73viz_c2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_15() {
+  private EditorCell createCollection_3() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_c73viz_d0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_7());
-    editorCell.addEditorCell(createRefNode_0());
-    editorCell.addEditorCell(createConstant_8());
+    editorCell.addEditorCell(createConstant_3());
+    editorCell.addEditorCell(createRefNode_1());
+    editorCell.addEditorCell(createConstant_4());
     return editorCell;
   }
-  private EditorCell createConstant_7() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ">>>");
     editorCell.setCellId("Constant_c73viz_a3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_0() {
+  private EditorCell createRefNode_1() {
     SingleRoleCellProvider provider = new inputSingleRoleHandler_c73viz_b3a(myNode, LINKS.input$OJ57, getEditorContext());
     return provider.createCell();
   }
@@ -1323,7 +255,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
       return "<no input>";
     }
   }
-  private EditorCell createConstant_8() {
+  private EditorCell createConstant_4() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "[ENTER]");
     editorCell.setCellId("Constant_c73viz_c3a");
     On_Enter.setCellActions(editorCell, myNode, getEditorContext());
@@ -1333,22 +265,14 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink history$OJz9 = MetaAdapterFactory.getContainmentLink(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e547e4aL, 0x259902795e55b30bL, "history");
-    /*package*/ static final SReferenceLink entry_4$fZcZ = MetaAdapterFactory.getReferenceLink(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e55b300L, 0x259902795e55b3c2L, "entry_4");
-    /*package*/ static final SReferenceLink entry_3$fT6_ = MetaAdapterFactory.getReferenceLink(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e55b300L, 0x259902795e55b3bdL, "entry_3");
-    /*package*/ static final SReferenceLink entry_2$fSax = MetaAdapterFactory.getReferenceLink(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e55b300L, 0x259902795e55b3b9L, "entry_2");
-    /*package*/ static final SReferenceLink entry_1$fMy9 = MetaAdapterFactory.getReferenceLink(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e55b300L, 0x259902795e55b3b6L, "entry_1");
     /*package*/ static final SContainmentLink input$OJ57 = MetaAdapterFactory.getContainmentLink(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e547e4aL, 0x259902795e55b309L, "input");
   }
 
-  private static final class CONCEPTS {
-    /*package*/ static final SConcept History$2X = MetaAdapterFactory.getConcept(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e55b300L, "Consoul.structure.History");
-    /*package*/ static final SConcept LinkAttribute$v_ = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute");
-    /*package*/ static final SConcept PropertyAttribute$Gb = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute");
+  private static final class PROPS {
+    /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
   }
 
-  private static final class PROPS {
-    /*package*/ static final SProperty query$8Y9$ = MetaAdapterFactory.getProperty(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e55b301L, 0x259902795e55b302L, "query");
-    /*package*/ static final SProperty response$93yV = MetaAdapterFactory.getProperty(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e55b301L, 0x259902795e55b304L, "response");
-    /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
+  private static final class CONCEPTS {
+    /*package*/ static final SConcept PropertyAttribute$Gb = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute");
   }
 }

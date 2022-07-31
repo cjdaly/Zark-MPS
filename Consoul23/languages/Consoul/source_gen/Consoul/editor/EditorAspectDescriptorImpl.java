@@ -20,6 +20,10 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 0:
         return Collections.<ConceptEditor>singletonList(new Consoul_Editor());
       case 1:
+        return Collections.<ConceptEditor>singletonList(new Entry_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new History_Editor());
+      case 3:
         return Collections.<ConceptEditor>singletonList(new Input_Editor());
       default:
     }
@@ -28,5 +32,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e547e4aL), MetaIdFactory.conceptId(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e55b2f7L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e547e4aL), MetaIdFactory.conceptId(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e55b301L), MetaIdFactory.conceptId(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e55b300L), MetaIdFactory.conceptId(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e55b2f7L)).seal();
 }

@@ -17,12 +17,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SConcept;
 
@@ -45,9 +43,6 @@ public final class Consoul__BehaviorDescriptor extends BaseBHDescriptor {
 
     if ("clear".equals(inputText)) {
       ListSequence.fromList(SLinkOperations.getChildren(history, LINKS.entries$94fv)).clear();
-      for (int i = 0; i < 4; i++) {
-        Consoul__BehaviorDescriptor.process_id7192NErfEh4.invokeSpecial(__thisNode__, history, "");
-      }
     } else {
       Consoul__BehaviorDescriptor.process_id7192NErfEh4.invokeSpecial(__thisNode__, history, inputText);
     }
@@ -55,15 +50,15 @@ public final class Consoul__BehaviorDescriptor extends BaseBHDescriptor {
   }
   /*package*/ static void process_id7192NErfEh4(@NotNull SNode __thisNode__, SNode history, String inputText) {
     if ("".equals(inputText)) {
-      inputText = "?";
+      inputText = "???";
     }
+    if (ListSequence.fromList(SLinkOperations.getChildren(history, LINKS.entries$94fv)).count() > 3) {
+      ListSequence.fromList(SLinkOperations.getChildren(history, LINKS.entries$94fv)).removeElementAt(0);
+    }
+
     SNodeFactoryOperations.addNewChild(history, LINKS.entries$94fv, CONCEPTS.Entry$3s);
     SPropertyOperations.assign(ListSequence.fromList(SLinkOperations.getChildren(history, LINKS.entries$94fv)).last(), PROPS.query$8Y9$, inputText);
     SPropertyOperations.assign(ListSequence.fromList(SLinkOperations.getChildren(history, LINKS.entries$94fv)).last(), PROPS.response$93yV, Consoul__BehaviorDescriptor.constructResponse_id7LrnlOWICTN.invoke(__thisNode__, inputText));
-    SLinkOperations.setTarget(history, LINKS.entry_1$fMy9, ListSequence.fromList(SLinkOperations.getChildren(history, LINKS.entries$94fv)).last());
-    SLinkOperations.setTarget(history, LINKS.entry_2$fSax, (SNode) SNodeOperations.getPrevSibling(SLinkOperations.getTarget(history, LINKS.entry_1$fMy9)));
-    SLinkOperations.setTarget(history, LINKS.entry_3$fT6_, (SNode) SNodeOperations.getPrevSibling(SLinkOperations.getTarget(history, LINKS.entry_2$fSax)));
-    SLinkOperations.setTarget(history, LINKS.entry_4$fZcZ, (SNode) SNodeOperations.getPrevSibling(SLinkOperations.getTarget(history, LINKS.entry_3$fT6_)));
   }
   /*package*/ static String constructResponse_id7LrnlOWICTN(@NotNull SNode __thisNode__, String inputText) {
     switch (inputText) {
@@ -77,8 +72,10 @@ public final class Consoul__BehaviorDescriptor extends BaseBHDescriptor {
         return "There is no exit!";
       case "xyzzy":
         return "Nothing happens.";
-      case "?":
+      case "???":
         return "...";
+      case "foo":
+        return "bar";
       default:
         return "I don't know what you're talking about!";
     }
@@ -140,10 +137,6 @@ public final class Consoul__BehaviorDescriptor extends BaseBHDescriptor {
     /*package*/ static final SContainmentLink history$OJz9 = MetaAdapterFactory.getContainmentLink(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e547e4aL, 0x259902795e55b30bL, "history");
     /*package*/ static final SContainmentLink input$OJ57 = MetaAdapterFactory.getContainmentLink(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e547e4aL, 0x259902795e55b309L, "input");
     /*package*/ static final SContainmentLink entries$94fv = MetaAdapterFactory.getContainmentLink(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e55b300L, 0x259902795e55b307L, "entries");
-    /*package*/ static final SReferenceLink entry_1$fMy9 = MetaAdapterFactory.getReferenceLink(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e55b300L, 0x259902795e55b3b6L, "entry_1");
-    /*package*/ static final SReferenceLink entry_2$fSax = MetaAdapterFactory.getReferenceLink(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e55b300L, 0x259902795e55b3b9L, "entry_2");
-    /*package*/ static final SReferenceLink entry_3$fT6_ = MetaAdapterFactory.getReferenceLink(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e55b300L, 0x259902795e55b3bdL, "entry_3");
-    /*package*/ static final SReferenceLink entry_4$fZcZ = MetaAdapterFactory.getReferenceLink(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e55b300L, 0x259902795e55b3c2L, "entry_4");
   }
 
   private static final class PROPS {

@@ -80,10 +80,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:e052cecb-b380-4c59-a290-139559855aca(Consoul.structure)/2709199371137037056");
     b.version(3);
-    b.associate("entry_1", 0x259902795e55b3b6L).target(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e55b301L).optional(true).origin("2709199371137037238").done();
-    b.associate("entry_2", 0x259902795e55b3b9L).target(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e55b301L).optional(true).origin("2709199371137037241").done();
-    b.associate("entry_3", 0x259902795e55b3bdL).target(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e55b301L).optional(true).origin("2709199371137037245").done();
-    b.associate("entry_4", 0x259902795e55b3c2L).target(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e55b301L).optional(true).origin("2709199371137037250").done();
     b.aggregate("entries", 0x259902795e55b307L).target(0xcf33fa7607f846ccL, 0x85d87e8d90785c3bL, 0x259902795e55b301L).optional(true).ordered(true).multiple(true).origin("2709199371137037063").done();
     return b.create();
   }

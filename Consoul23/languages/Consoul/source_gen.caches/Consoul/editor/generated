@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="c767p00vupw6nqh8mxdlkbchqen6vrb">
-  <files names="Consoul_Editor.java:Consoul_EditorBuilder_a.java:EditorAspectDescriptorImpl.java:Input_Editor.java:Input_EditorBuilder_a.java:On_Enter.java" />
+<product version="3" modelHash="51aic7mh46mg4jt00wiot0721x8jb1m">
+  <files names="Consoul_Editor.java:Consoul_EditorBuilder_a.java:EditorAspectDescriptorImpl.java:Entry_Editor.java:Entry_EditorBuilder_a.java:History_Editor.java:History_EditorBuilder_a.java:Input_Editor.java:Input_EditorBuilder_a.java:On_Enter.java" />
 </product>
 
