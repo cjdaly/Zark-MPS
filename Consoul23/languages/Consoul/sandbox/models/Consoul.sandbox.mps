@@ -26,25 +26,17 @@
       </concept>
     </language>
   </registry>
-  <node concept="1VNnKN" id="a3SQDvb0x">
+  <node concept="1VNnKN" id="4rV_IJYxLjE">
     <property role="TrG5h" value="foo" />
-    <node concept="1VNb2e" id="a3SQDvb0y" role="1VNb5K" />
-    <node concept="1VNb5T" id="a3SQDvb0z" role="1VNb5M">
-      <node concept="1VNb5S" id="a3SQDxPIT" role="1VNb5Y">
-        <property role="1VNb5V" value="hi" />
-        <property role="1VNb5X" value="Hello!" />
-      </node>
-      <node concept="1VNb5S" id="a3SQDxPIX" role="1VNb5Y">
-        <property role="1VNb5V" value="exit" />
-        <property role="1VNb5X" value="There is no exit!" />
-      </node>
-      <node concept="1VNb5S" id="a3SQDxPJ2" role="1VNb5Y">
+    <node concept="1VNb2e" id="4rV_IJYxLjF" role="1VNb5K" />
+    <node concept="1VNb5T" id="4rV_IJYxLjG" role="1VNb5M">
+      <node concept="1VNb5S" id="4rV_IJYxLjH" role="1VNb5Y">
         <property role="1VNb5V" value="hello" />
         <property role="1VNb5X" value="Hi!" />
       </node>
-      <node concept="1VNb5S" id="3DGgvxQJGI3" role="1VNb5Y">
-        <property role="1VNb5V" value="dfdf" />
-        <property role="1VNb5X" value="I don't know what you're talking about!" />
+      <node concept="1VNb5S" id="4rV_IJYxLjJ" role="1VNb5Y">
+        <property role="1VNb5V" value="hi" />
+        <property role="1VNb5X" value="Hello!" />
       </node>
     </node>
   </node>
