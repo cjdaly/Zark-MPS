@@ -3,7 +3,7 @@ Can [Jetbrains MPS](https://www.jetbrains.com/mps/) be used to make a game or ga
 
 ### Zark
 
-A silly Zork-like adventure game engine prototype. Supports moving between areas and picking up and dropping items. Score points by visiting all the areas.
+A silly Zork-like adventure game engine prototype. Supports moving between areas and picking up and dropping items. Score points by visiting all the areas. (Use editor hints to toggle between editing and playing the game.)
 
 ### Consoul
 
