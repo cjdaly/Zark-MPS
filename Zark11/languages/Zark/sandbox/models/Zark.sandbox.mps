@@ -39,7 +39,7 @@
     </language>
   </registry>
   <node concept="ia1vw" id="6czCilL3vVR">
-    <property role="TrG5h" value="foo" />
+    <property role="TrG5h" value="adventure" />
     <node concept="ibODn" id="6czCilL3vVS" role="ibOEq">
       <property role="37FrDC" value="0" />
       <ref role="2c9o49" node="6czCilL3vVT" resolve="house" />
@@ -59,8 +59,8 @@
       <node concept="3VZqKi" id="5BoIa9T$c8v" role="3VZlgW">
         <property role="TrG5h" value="coin" />
         <property role="wlZSW" value="a gold coin" />
-        <ref role="3VZqKJ" node="2bTJ7AIJ3Bl" resolve="hedge" />
-        <ref role="3VZqKH" node="2bTJ7AIJ3Bl" resolve="hedge" />
+        <ref role="3VZqKJ" node="4uCF41AyAdJ" resolve="maze3" />
+        <ref role="3VZqKH" node="4uCF41AyAdJ" resolve="maze3" />
       </node>
       <node concept="ibODm" id="6czCilL3vVT" role="ibOEf">
         <property role="TrG5h" value="house" />
@@ -96,6 +96,38 @@
         <property role="37E873" value="2" />
         <ref role="ibOEg" node="6czCilL3vVT" resolve="house" />
         <ref role="ibOEb" node="6czCilL3vVV" resolve="lakeside" />
+        <ref role="ibOEk" node="4uCF41AyAdw" resolve="maze1" />
+        <ref role="ibOE9" node="4uCF41AyAdB" resolve="maze2" />
+      </node>
+      <node concept="ibODm" id="4uCF41AyAdw" role="ibOEf">
+        <property role="TrG5h" value="maze1" />
+        <property role="ibOEv" value="hedge maze" />
+        <property role="37E873" value="0" />
+        <property role="ibOEp" value="You are in a maze of twisty passages ..." />
+        <ref role="ibOEk" node="4uCF41AyAdw" resolve="maze1" />
+        <ref role="ibOE9" node="4uCF41AyAdB" resolve="maze2" />
+        <ref role="ibOEg" node="4uCF41AyAdw" resolve="maze1" />
+        <ref role="ibOEb" node="4uCF41AyAdB" resolve="maze2" />
+      </node>
+      <node concept="ibODm" id="4uCF41AyAdB" role="ibOEf">
+        <property role="TrG5h" value="maze2" />
+        <property role="ibOEv" value="hedge maze" />
+        <property role="37E873" value="0" />
+        <property role="ibOEp" value="You are in a twisty maze of passages ..." />
+        <ref role="ibOE9" node="4uCF41AyAdJ" resolve="maze3" />
+        <ref role="ibOEb" node="4uCF41AyAdw" resolve="maze1" />
+        <ref role="ibOEk" node="4uCF41AyAdw" resolve="maze1" />
+        <ref role="ibOEg" node="4uCF41AyAdw" resolve="maze1" />
+      </node>
+      <node concept="ibODm" id="4uCF41AyAdJ" role="ibOEf">
+        <property role="TrG5h" value="maze3" />
+        <property role="ibOEv" value="small clearing" />
+        <property role="37E873" value="4" />
+        <property role="ibOEp" value="You are in a small clearing in the hedge maze ..." />
+        <ref role="ibOE9" node="4uCF41AyAdw" resolve="maze1" />
+        <ref role="ibOEk" node="4uCF41AyAdB" resolve="maze2" />
+        <ref role="ibOEb" node="4uCF41AyAdw" resolve="maze1" />
+        <ref role="ibOEg" node="2bTJ7AIJ3Bl" resolve="hedge" />
       </node>
       <node concept="ibODm" id="6czCilL3vVY" role="ibOEf">
         <property role="TrG5h" value="cliff base" />
