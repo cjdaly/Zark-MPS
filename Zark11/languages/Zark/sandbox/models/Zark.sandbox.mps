@@ -27,6 +27,7 @@
         <child id="1615862684670092976" name="items" index="3VZlgW" />
       </concept>
       <concept id="1615862684670041758" name="Zark.structure.Item" flags="ng" index="3VZqKi">
+        <property id="6474127472308733598" name="description" index="wlZSW" />
         <reference id="1615862684670041761" name="currentArea" index="3VZqKH" />
         <reference id="1615862684670041763" name="homeArea" index="3VZqKJ" />
       </concept>
@@ -45,13 +46,21 @@
       <ref role="ibmbr" node="6czCilL3vVT" resolve="house" />
       <node concept="3VZqKi" id="1pGGCNH_fTs" role="3VZlgW">
         <property role="TrG5h" value="sword" />
+        <property role="wlZSW" value="an old rusty sword" />
         <ref role="3VZqKJ" node="6czCilL3vVY" resolve="cliff base" />
         <ref role="3VZqKH" node="6czCilL3vVY" resolve="cliff base" />
       </node>
       <node concept="3VZqKi" id="1pGGCNH_fTu" role="3VZlgW">
         <property role="TrG5h" value="cup" />
+        <property role="wlZSW" value="a wooden cup" />
         <ref role="3VZqKJ" node="6czCilL3vVV" resolve="lakeside" />
         <ref role="3VZqKH" node="6czCilL3vVV" resolve="lakeside" />
+      </node>
+      <node concept="3VZqKi" id="5BoIa9T$c8v" role="3VZlgW">
+        <property role="TrG5h" value="coin" />
+        <property role="wlZSW" value="a gold coin" />
+        <ref role="3VZqKJ" node="2bTJ7AIJ3Bl" resolve="hedge" />
+        <ref role="3VZqKH" node="2bTJ7AIJ3Bl" resolve="hedge" />
       </node>
       <node concept="ibODm" id="6czCilL3vVT" role="ibOEf">
         <property role="TrG5h" value="house" />
