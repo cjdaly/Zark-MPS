@@ -8,6 +8,7 @@
   <registry>
     <language id="e0d25b4f-659c-4380-b387-6eb73dc1b925" name="Zark">
       <concept id="7143730616122193605" name="Zark.structure.Zark" flags="ng" index="ia1vw">
+        <property id="1039066224861969967" name="moveCount" index="3xqRWm" />
         <child id="7143730616122272703" name="map" index="ibOEq" />
       </concept>
       <concept id="7143730616122272627" name="Zark.structure.Area" flags="ng" index="ibODm">
@@ -40,6 +41,7 @@
   </registry>
   <node concept="ia1vw" id="6czCilL3vVR">
     <property role="TrG5h" value="adventure" />
+    <property role="3xqRWm" value="0" />
     <node concept="ibODn" id="6czCilL3vVS" role="ibOEq">
       <property role="37FrDC" value="0" />
       <ref role="2c9o49" node="6czCilL3vVT" resolve="house" />

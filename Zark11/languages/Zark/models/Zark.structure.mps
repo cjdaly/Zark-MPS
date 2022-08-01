@@ -63,6 +63,11 @@
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="5BoIa9THXeT" resolve="InventoryItem" />
     </node>
+    <node concept="1TJgyi" id="TFwjBJ0fSJ" role="1TKVEl">
+      <property role="IQ2nx" value="1039066224861969967" />
+      <property role="TrG5h" value="moveCount" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6czCilL3eHM">
     <property role="EcuMT" value="7143730616122272626" />

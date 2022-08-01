@@ -446,6 +446,12 @@
             </node>
           </node>
         </node>
+        <node concept="3F0ifn" id="TFwjBJ0gs1" role="3EZMnx">
+          <property role="3F0ifm" value="moves:" />
+        </node>
+        <node concept="3F0A7n" id="TFwjBJ0gsn" role="3EZMnx">
+          <ref role="1NtTu8" to="8rlq:TFwjBJ0fSJ" resolve="moveCount" />
+        </node>
       </node>
       <node concept="35HoNQ" id="2bTJ7AISdAd" role="3EZMnx" />
       <node concept="3F1sOY" id="2bTJ7AIKeew" role="3EZMnx">
@@ -845,6 +851,14 @@
                   </node>
                 </node>
               </node>
+              <node concept="3clFbF" id="TFwjBJ0H1V" role="3cqZAp">
+                <node concept="2OqwBi" id="TFwjBJ0H1X" role="3clFbG">
+                  <node concept="0IXxy" id="TFwjBJ0H1Y" role="2Oq$k0" />
+                  <node concept="2qgKlT" id="TFwjBJ0H1Z" role="2OqNvi">
+                    <ref role="37wK5l" to="hmna:TFwjBJ0qyC" resolve="updateMoveCount" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -916,6 +930,14 @@
                   <node concept="0IXxy" id="5BoIa9TFsPM" role="2Oq$k0" />
                   <node concept="2qgKlT" id="5BoIa9TFsPN" role="2OqNvi">
                     <ref role="37wK5l" to="hmna:5BoIa9TDamP" resolve="updateAreaItems" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="TFwjBJ0GU7" role="3cqZAp">
+                <node concept="2OqwBi" id="TFwjBJ0GU9" role="3clFbG">
+                  <node concept="0IXxy" id="TFwjBJ0GUa" role="2Oq$k0" />
+                  <node concept="2qgKlT" id="TFwjBJ0GUb" role="2OqNvi">
+                    <ref role="37wK5l" to="hmna:TFwjBJ0qyC" resolve="updateMoveCount" />
                   </node>
                 </node>
               </node>
@@ -993,6 +1015,14 @@
                   </node>
                 </node>
               </node>
+              <node concept="3clFbF" id="TFwjBJ0GJG" role="3cqZAp">
+                <node concept="2OqwBi" id="TFwjBJ0GJI" role="3clFbG">
+                  <node concept="0IXxy" id="TFwjBJ0GJJ" role="2Oq$k0" />
+                  <node concept="2qgKlT" id="TFwjBJ0GJK" role="2OqNvi">
+                    <ref role="37wK5l" to="hmna:TFwjBJ0qyC" resolve="updateMoveCount" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -1064,6 +1094,14 @@
                   <node concept="0IXxy" id="5BoIa9TFqU8" role="2Oq$k0" />
                   <node concept="2qgKlT" id="5BoIa9TFro6" role="2OqNvi">
                     <ref role="37wK5l" to="hmna:5BoIa9TDamP" resolve="updateAreaItems" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="TFwjBJ0FVN" role="3cqZAp">
+                <node concept="2OqwBi" id="TFwjBJ0GcR" role="3clFbG">
+                  <node concept="0IXxy" id="TFwjBJ0FVM" role="2Oq$k0" />
+                  <node concept="2qgKlT" id="TFwjBJ0Gv7" role="2OqNvi">
+                    <ref role="37wK5l" to="hmna:TFwjBJ0qyC" resolve="updateMoveCount" />
                   </node>
                 </node>
               </node>
@@ -1152,6 +1190,16 @@
               </node>
               <node concept="2qgKlT" id="5BoIa9TLxA4" role="2OqNvi">
                 <ref role="37wK5l" to="hmna:5BoIa9T$I7X" resolve="updateInventoryItems" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="TFwjBJ0F2a" role="3cqZAp">
+            <node concept="2OqwBi" id="TFwjBJ0FnH" role="3clFbG">
+              <node concept="37vLTw" id="TFwjBJ0F28" role="2Oq$k0">
+                <ref role="3cqZAo" node="5BoIa9TLw_6" resolve="zark" />
+              </node>
+              <node concept="2qgKlT" id="TFwjBJ0FIL" role="2OqNvi">
+                <ref role="37wK5l" to="hmna:TFwjBJ0udp" resolve="resetMoveCount" />
               </node>
             </node>
           </node>
@@ -1289,6 +1337,16 @@
               </node>
             </node>
           </node>
+          <node concept="3clFbF" id="TFwjBJ0Hrx" role="3cqZAp">
+            <node concept="2OqwBi" id="TFwjBJ0HOv" role="3clFbG">
+              <node concept="37vLTw" id="TFwjBJ0Hrv" role="2Oq$k0">
+                <ref role="3cqZAo" node="5BoIa9TI38D" resolve="zark" />
+              </node>
+              <node concept="2qgKlT" id="TFwjBJ0IaF" role="2OqNvi">
+                <ref role="37wK5l" to="hmna:TFwjBJ0j9J" resolve="updateMoveCount" />
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
@@ -1369,6 +1427,16 @@
               </node>
               <node concept="2qgKlT" id="5BoIa9TI2kh" role="2OqNvi">
                 <ref role="37wK5l" to="hmna:5BoIa9TDamP" resolve="updateAreaItems" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="TFwjBJ0Itq" role="3cqZAp">
+            <node concept="2OqwBi" id="TFwjBJ0IBm" role="3clFbG">
+              <node concept="37vLTw" id="TFwjBJ0Ito" role="2Oq$k0">
+                <ref role="3cqZAo" node="5BoIa9THXh9" resolve="zark" />
+              </node>
+              <node concept="2qgKlT" id="TFwjBJ0INk" role="2OqNvi">
+                <ref role="37wK5l" to="hmna:TFwjBJ0j9J" resolve="updateMoveCount" />
               </node>
             </node>
           </node>
