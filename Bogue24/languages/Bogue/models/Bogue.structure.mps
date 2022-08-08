@@ -10,6 +10,17 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="3348158742936976480" name="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" flags="ng" index="25R33">
+        <property id="1421157252384165432" name="memberId" index="3tVfz5" />
+        <property id="672037151186491528" name="presentation" index="1L1pqM" />
+      </concept>
+      <concept id="3348158742936976479" name="jetbrains.mps.lang.structure.structure.EnumerationDeclaration" flags="ng" index="25R3W">
+        <reference id="1075010451642646892" name="defaultMember" index="1H5jkz" />
+        <child id="3348158742936976577" name="members" index="25R1y" />
+      </concept>
+      <concept id="1082978164218" name="jetbrains.mps.lang.structure.structure.DataTypeDeclaration" flags="ng" index="AxPO6">
+        <property id="7791109065626895363" name="datatypeId" index="3F6X1D" />
+      </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
@@ -82,6 +93,16 @@
     <property role="EcuMT" value="6412726265267269436" />
     <property role="TrG5h" value="Tile" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyi" id="PVr30ljH5O" role="1TKVEl">
+      <property role="IQ2nx" value="971489098400190836" />
+      <property role="TrG5h" value="type" />
+      <ref role="AX2Wp" node="PVr30ljH5E" resolve="TileType" />
+    </node>
+    <node concept="1TJgyi" id="PVr30lmoPK" role="1TKVEl">
+      <property role="IQ2nx" value="971489098400894320" />
+      <property role="TrG5h" value="region" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
     <node concept="1TJgyi" id="5zY_8ZF4EXe" role="1TKVEl">
       <property role="IQ2nx" value="6412726265267269454" />
       <property role="TrG5h" value="x" />
@@ -91,11 +112,6 @@
       <property role="IQ2nx" value="6412726265267269456" />
       <property role="TrG5h" value="y" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
-    <node concept="1TJgyi" id="5zY_8ZF4EXj" role="1TKVEl">
-      <property role="IQ2nx" value="6412726265267269459" />
-      <property role="TrG5h" value="displayChar" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="1TIwiD" id="5zY_8ZF4EWX">
@@ -138,6 +154,51 @@
       <property role="IQ2nx" value="24263871671476746" />
       <property role="TrG5h" value="height" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+  </node>
+  <node concept="25R3W" id="PVr30ljH5E">
+    <property role="3F6X1D" value="971489098400190826" />
+    <property role="TrG5h" value="TileType" />
+    <ref role="1H5jkz" node="PVr30ljH5F" resolve="Wall" />
+    <node concept="25R33" id="PVr30ljH5F" role="25R1y">
+      <property role="3tVfz5" value="971489098400190827" />
+      <property role="TrG5h" value="Wall" />
+      <property role="1L1pqM" value="#" />
+    </node>
+    <node concept="25R33" id="PVr30ljH5J" role="25R1y">
+      <property role="3tVfz5" value="971489098400190831" />
+      <property role="TrG5h" value="Room" />
+      <property role="1L1pqM" value=" " />
+    </node>
+    <node concept="25R33" id="PVr30ljH5G" role="25R1y">
+      <property role="3tVfz5" value="971489098400190828" />
+      <property role="TrG5h" value="Passage" />
+      <property role="1L1pqM" value="." />
+    </node>
+  </node>
+  <node concept="25R3W" id="PVr30lqCNT">
+    <property role="3F6X1D" value="971489098402008313" />
+    <property role="TrG5h" value="Direction" />
+    <ref role="1H5jkz" node="PVr30lqCNU" resolve="N" />
+    <node concept="25R33" id="PVr30lqCNU" role="25R1y">
+      <property role="3tVfz5" value="971489098402008314" />
+      <property role="TrG5h" value="North" />
+      <property role="1L1pqM" value="N" />
+    </node>
+    <node concept="25R33" id="PVr30lqCNV" role="25R1y">
+      <property role="3tVfz5" value="971489098402008315" />
+      <property role="TrG5h" value="East" />
+      <property role="1L1pqM" value="E" />
+    </node>
+    <node concept="25R33" id="PVr30lqCNY" role="25R1y">
+      <property role="3tVfz5" value="971489098402008318" />
+      <property role="TrG5h" value="South" />
+      <property role="1L1pqM" value="S" />
+    </node>
+    <node concept="25R33" id="PVr30lqCO2" role="25R1y">
+      <property role="3tVfz5" value="971489098402008322" />
+      <property role="TrG5h" value="West" />
+      <property role="1L1pqM" value="W" />
     </node>
   </node>
 </model>
