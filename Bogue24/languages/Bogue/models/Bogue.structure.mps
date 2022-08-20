@@ -93,6 +93,12 @@
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="4QISlISdWXL" resolve="Passage" />
     </node>
+    <node concept="1TJgyj" id="4QISlISXuWy" role="1TKVEi">
+      <property role="IQ2ns" value="5597659170929504034" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="view" />
+      <ref role="20lvS9" node="4QISlISXuWs" resolve="View" />
+    </node>
     <node concept="1TJgyi" id="1mcXNrSZyC" role="1TKVEl">
       <property role="IQ2nx" value="24263871672088744" />
       <property role="TrG5h" value="width" />
@@ -191,31 +197,6 @@
       <property role="1L1pqM" value="." />
     </node>
   </node>
-  <node concept="25R3W" id="PVr30lqCNT">
-    <property role="3F6X1D" value="971489098402008313" />
-    <property role="TrG5h" value="Direction" />
-    <ref role="1H5jkz" node="PVr30lqCNU" resolve="N" />
-    <node concept="25R33" id="PVr30lqCNU" role="25R1y">
-      <property role="3tVfz5" value="971489098402008314" />
-      <property role="TrG5h" value="North" />
-      <property role="1L1pqM" value="N" />
-    </node>
-    <node concept="25R33" id="PVr30lqCNV" role="25R1y">
-      <property role="3tVfz5" value="971489098402008315" />
-      <property role="TrG5h" value="East" />
-      <property role="1L1pqM" value="E" />
-    </node>
-    <node concept="25R33" id="PVr30lqCNY" role="25R1y">
-      <property role="3tVfz5" value="971489098402008318" />
-      <property role="TrG5h" value="South" />
-      <property role="1L1pqM" value="S" />
-    </node>
-    <node concept="25R33" id="PVr30lqCO2" role="25R1y">
-      <property role="3tVfz5" value="971489098402008322" />
-      <property role="TrG5h" value="West" />
-      <property role="1L1pqM" value="W" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="4QISlISdWXL">
     <property role="EcuMT" value="5597659170917044081" />
     <property role="TrG5h" value="Passage" />
@@ -247,6 +228,60 @@
       <property role="IQ2ns" value="5597659170917044084" />
       <property role="20kJfa" value="tile" />
       <ref role="20lvS9" node="5zY_8ZF4EWW" resolve="Tile" />
+    </node>
+    <node concept="1TJgyi" id="6k$Vo2GcbYG" role="1TKVEl">
+      <property role="IQ2nx" value="7288211233892777900" />
+      <property role="TrG5h" value="x" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="6k$Vo2GcbYJ" role="1TKVEl">
+      <property role="IQ2nx" value="7288211233892777903" />
+      <property role="TrG5h" value="y" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="4QISlISXuX6" role="1TKVEl">
+      <property role="IQ2nx" value="5597659170929504070" />
+      <property role="TrG5h" value="tileText" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4QISlISXuWs">
+    <property role="EcuMT" value="5597659170929504028" />
+    <property role="TrG5h" value="View" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="4QISlISXuWu" role="1TKVEi">
+      <property role="IQ2ns" value="5597659170929504030" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="columns" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="4QISlISXuWt" resolve="ViewColumn" />
+    </node>
+    <node concept="1TJgyi" id="6k$Vo2GcBJa" role="1TKVEl">
+      <property role="IQ2nx" value="7288211233892891594" />
+      <property role="TrG5h" value="d" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="6k$Vo2Gc$aH" role="1TKVEl">
+      <property role="IQ2nx" value="7288211233892876973" />
+      <property role="TrG5h" value="x" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="6k$Vo2Gc$aL" role="1TKVEl">
+      <property role="IQ2nx" value="7288211233892876977" />
+      <property role="TrG5h" value="y" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4QISlISXuWt">
+    <property role="EcuMT" value="5597659170929504029" />
+    <property role="TrG5h" value="ViewColumn" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="4QISlISXuWw" role="1TKVEi">
+      <property role="IQ2ns" value="5597659170929504032" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="tiles" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="4QISlISdWXN" resolve="TileRef" />
     </node>
   </node>
 </model>
