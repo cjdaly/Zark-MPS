@@ -260,6 +260,11 @@
       <property role="TrG5h" value="tileText" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
+    <node concept="1TJgyi" id="1m3bLstcgAt" role="1TKVEl">
+      <property role="IQ2nx" value="1550134473066088861" />
+      <property role="TrG5h" value="mode" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
   </node>
   <node concept="1TIwiD" id="4QISlISXuWs">
     <property role="EcuMT" value="5597659170929504028" />
@@ -322,6 +327,11 @@
     <node concept="1TJgyi" id="6k$Vo2GqrEt" role="1TKVEl">
       <property role="IQ2nx" value="7288211233896512157" />
       <property role="TrG5h" value="exitY" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="1m3bLstbYZW" role="1TKVEl">
+      <property role="IQ2nx" value="1550134473066016764" />
+      <property role="TrG5h" value="mode" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>

@@ -512,6 +512,44 @@
         </node>
       </node>
     </node>
+    <node concept="2PxR9H" id="1m3bLstbES6" role="2QnnpI">
+      <property role="2PxWOX" value="emoji mode" />
+      <node concept="2Py5lD" id="1m3bLstbES7" role="2PyaAO">
+        <property role="2PWKIB" value="shift" />
+        <property role="2PWKIS" value="VK_E" />
+      </node>
+      <node concept="2PzhpH" id="1m3bLstbES8" role="2PL9iG">
+        <node concept="3clFbS" id="1m3bLstbES9" role="2VODD2">
+          <node concept="3clFbF" id="1m3bLstcR$H" role="3cqZAp">
+            <node concept="2OqwBi" id="1m3bLstcRIF" role="3clFbG">
+              <node concept="0GJ7k" id="1m3bLstcR$G" role="2Oq$k0" />
+              <node concept="2qgKlT" id="1m3bLstcSaA" role="2OqNvi">
+                <ref role="37wK5l" to="3v5m:1m3bLstc1uh" resolve="emojiMode" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2PxR9H" id="1m3bLstcQGo" role="2QnnpI">
+      <property role="2PxWOX" value="normal mode" />
+      <node concept="2Py5lD" id="1m3bLstcQGp" role="2PyaAO">
+        <property role="2PWKIB" value="shift" />
+        <property role="2PWKIS" value="VK_N" />
+      </node>
+      <node concept="2PzhpH" id="1m3bLstcQGq" role="2PL9iG">
+        <node concept="3clFbS" id="1m3bLstcQGr" role="2VODD2">
+          <node concept="3clFbF" id="1m3bLstcSb0" role="3cqZAp">
+            <node concept="2OqwBi" id="1m3bLstcSdc" role="3clFbG">
+              <node concept="0GJ7k" id="1m3bLstcSaZ" role="2Oq$k0" />
+              <node concept="2qgKlT" id="1m3bLstcSfj" role="2OqNvi">
+                <ref role="37wK5l" to="3v5m:1m3bLstcaos" resolve="normalMode" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
