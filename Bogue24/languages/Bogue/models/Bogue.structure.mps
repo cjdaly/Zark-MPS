@@ -99,6 +99,12 @@
       <property role="20kJfa" value="view" />
       <ref role="20lvS9" node="4QISlISXuWs" resolve="View" />
     </node>
+    <node concept="1TJgyj" id="6k$Vo2GqrEy" role="1TKVEi">
+      <property role="IQ2ns" value="7288211233896512162" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="state" />
+      <ref role="20lvS9" node="6k$Vo2GqrEj" resolve="GameState" />
+    </node>
     <node concept="1TJgyi" id="1mcXNrSZyC" role="1TKVEl">
       <property role="IQ2nx" value="24263871672088744" />
       <property role="TrG5h" value="width" />
@@ -239,6 +245,16 @@
       <property role="TrG5h" value="y" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
+    <node concept="1TJgyi" id="6k$Vo2GrjZH" role="1TKVEl">
+      <property role="IQ2nx" value="7288211233896742893" />
+      <property role="TrG5h" value="playerHere" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="6k$Vo2GrjZM" role="1TKVEl">
+      <property role="IQ2nx" value="7288211233896742898" />
+      <property role="TrG5h" value="exitHere" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="1TJgyi" id="4QISlISXuX6" role="1TKVEl">
       <property role="IQ2nx" value="5597659170929504070" />
       <property role="TrG5h" value="tileText" />
@@ -282,6 +298,31 @@
       <property role="20kJfa" value="tiles" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="4QISlISdWXN" resolve="TileRef" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6k$Vo2GqrEj">
+    <property role="EcuMT" value="7288211233896512147" />
+    <property role="TrG5h" value="GameState" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyi" id="6k$Vo2GqrEk" role="1TKVEl">
+      <property role="IQ2nx" value="7288211233896512148" />
+      <property role="TrG5h" value="playerX" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="6k$Vo2GqrEm" role="1TKVEl">
+      <property role="IQ2nx" value="7288211233896512150" />
+      <property role="TrG5h" value="playerY" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="6k$Vo2GqrEp" role="1TKVEl">
+      <property role="IQ2nx" value="7288211233896512153" />
+      <property role="TrG5h" value="exitX" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="6k$Vo2GqrEt" role="1TKVEl">
+      <property role="IQ2nx" value="7288211233896512157" />
+      <property role="TrG5h" value="exitY" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
 </model>

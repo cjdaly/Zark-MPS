@@ -26,12 +26,19 @@
         <property id="24263871672088744" name="width" index="3rHsHO" />
         <property id="24263871672088746" name="height" index="3rHsHQ" />
         <child id="6412726265267269448" name="columns" index="2NV3J7" />
+        <child id="7288211233896512162" name="state" index="39jlsy" />
         <child id="5597659170929504034" name="view" index="3PmKTT" />
         <child id="5597659170918618916" name="rooms" index="3PSjpZ" />
         <child id="5597659170918949924" name="passages" index="3PYwlZ" />
       </concept>
       <concept id="6412726265267190466" name="Bogue.structure.Bogue" flags="ng" index="2NVYTd">
         <child id="6412726265267269438" name="map" index="2NV3IL" />
+      </concept>
+      <concept id="7288211233896512147" name="Bogue.structure.GameState" flags="ng" index="39jlsj">
+        <property id="7288211233896512148" name="playerX" index="39jlsk" />
+        <property id="7288211233896512150" name="playerY" index="39jlsm" />
+        <property id="7288211233896512153" name="exitX" index="39jlsp" />
+        <property id="7288211233896512157" name="exitY" index="39jlst" />
       </concept>
       <concept id="24263871671476736" name="Bogue.structure.Room" flags="ng" index="3rz97s">
         <property id="24263871671476746" name="height" index="3rz97m" />
@@ -51,6 +58,8 @@
       <concept id="5597659170917044083" name="Bogue.structure.TileRef" flags="ng" index="3PAiSC">
         <property id="7288211233892777900" name="x" index="39558G" />
         <property id="7288211233892777903" name="y" index="39558J" />
+        <property id="7288211233896742893" name="playerHere" index="39it9H" />
+        <property id="7288211233896742898" name="exitHere" index="39it9M" />
         <reference id="5597659170917044084" name="tile" index="3PAiSJ" />
       </concept>
       <concept id="5597659170917044082" name="Bogue.structure.Area" flags="ng" index="3PAiSD">
@@ -9252,431 +9261,439 @@
           <ref role="3PAiSJ" node="6k$Vo2GpuC6" />
         </node>
       </node>
-      <node concept="3PmKT7" id="6k$Vo2GpvBn" role="3PmKTT">
+      <node concept="39jlsj" id="6k$Vo2Gt8hM" role="39jlsy">
+        <property role="39jlsk" value="8" />
+        <property role="39jlsm" value="5" />
+        <property role="39jlsp" value="9" />
+        <property role="39jlst" value="5" />
+      </node>
+      <node concept="3PmKT7" id="6k$Vo2Gt8hN" role="3PmKTT">
         <property role="395Dpa" value="4" />
-        <property role="395EWH" value="36" />
-        <property role="395EWL" value="6" />
-        <node concept="3PmKT6" id="6k$Vo2GpvBo" role="3PmKT5">
-          <node concept="3PAiSC" id="6k$Vo2GpvBp" role="3PmKTV">
+        <property role="395EWH" value="8" />
+        <property role="395EWL" value="5" />
+        <node concept="3PmKT6" id="6k$Vo2Gt8hO" role="3PmKT5">
+          <node concept="3PAiSC" id="6k$Vo2Gt8hP" role="3PmKTV">
             <property role="39558G" value="-4" />
             <property role="39558J" value="-4" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpuys" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpujz" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBq" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8hQ" role="3PmKTV">
             <property role="39558G" value="-4" />
             <property role="39558J" value="-3" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpuyt" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpuj$" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBr" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8hR" role="3PmKTV">
             <property role="39558G" value="-4" />
             <property role="39558J" value="-2" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpuyu" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpuj_" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBs" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8hS" role="3PmKTV">
             <property role="39558G" value="-4" />
             <property role="39558J" value="-1" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpuyv" />
+            <ref role="3PAiSJ" node="6k$Vo2GpujA" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBt" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8hT" role="3PmKTV">
             <property role="39558G" value="-4" />
             <property role="39558J" value="0" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpuyw" />
+            <ref role="3PAiSJ" node="6k$Vo2GpujB" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBu" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8hU" role="3PmKTV">
             <property role="39558G" value="-4" />
             <property role="39558J" value="1" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpuyx" />
+            <ref role="3PAiSJ" node="6k$Vo2GpujC" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBv" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8hV" role="3PmKTV">
             <property role="39558G" value="-4" />
             <property role="39558J" value="2" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpuyy" />
+            <ref role="3PAiSJ" node="6k$Vo2GpujD" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBw" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8hW" role="3PmKTV">
             <property role="39558G" value="-4" />
             <property role="39558J" value="3" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpuyz" />
+            <ref role="3PAiSJ" node="6k$Vo2GpujE" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBx" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8hX" role="3PmKTV">
             <property role="39558G" value="-4" />
             <property role="39558J" value="4" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpuy$" />
+            <ref role="3PAiSJ" node="6k$Vo2GpujF" />
           </node>
         </node>
-        <node concept="3PmKT6" id="6k$Vo2GpvBy" role="3PmKT5">
-          <node concept="3PAiSC" id="6k$Vo2GpvBz" role="3PmKTV">
+        <node concept="3PmKT6" id="6k$Vo2Gt8hY" role="3PmKT5">
+          <node concept="3PAiSC" id="6k$Vo2Gt8hZ" role="3PmKTV">
             <property role="39558G" value="-3" />
             <property role="39558J" value="-4" />
-            <ref role="3PAiSJ" node="6k$Vo2GpuyY" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpuk5" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvB$" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8i0" role="3PmKTV">
             <property role="39558G" value="-3" />
             <property role="39558J" value="-3" />
-            <ref role="3PAiSJ" node="6k$Vo2GpuyZ" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpuk6" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvB_" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8i1" role="3PmKTV">
             <property role="39558G" value="-3" />
             <property role="39558J" value="-2" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpuz0" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpuk7" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBA" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8i2" role="3PmKTV">
             <property role="39558G" value="-3" />
             <property role="39558J" value="-1" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpuz1" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpuk8" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBB" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8i3" role="3PmKTV">
             <property role="39558G" value="-3" />
             <property role="39558J" value="0" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpuz2" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpuk9" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBC" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8i4" role="3PmKTV">
             <property role="39558G" value="-3" />
             <property role="39558J" value="1" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpuz3" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpuka" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBD" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8i5" role="3PmKTV">
             <property role="39558G" value="-3" />
             <property role="39558J" value="2" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpuz4" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpukb" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBE" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8i6" role="3PmKTV">
             <property role="39558G" value="-3" />
             <property role="39558J" value="3" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpuz5" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpukc" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBF" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8i7" role="3PmKTV">
             <property role="39558G" value="-3" />
             <property role="39558J" value="4" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpuz6" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpukd" />
           </node>
         </node>
-        <node concept="3PmKT6" id="6k$Vo2GpvBG" role="3PmKT5">
-          <node concept="3PAiSC" id="6k$Vo2GpvBH" role="3PmKTV">
+        <node concept="3PmKT6" id="6k$Vo2Gt8i8" role="3PmKT5">
+          <node concept="3PAiSC" id="6k$Vo2Gt8i9" role="3PmKTV">
             <property role="39558G" value="-2" />
             <property role="39558J" value="-4" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpuzw" />
+            <ref role="3PAiSJ" node="6k$Vo2GpukB" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBI" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8ia" role="3PmKTV">
             <property role="39558G" value="-2" />
             <property role="39558J" value="-3" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpuzx" />
+            <ref role="3PAiSJ" node="6k$Vo2GpukC" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBJ" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8ib" role="3PmKTV">
             <property role="39558G" value="-2" />
             <property role="39558J" value="-2" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpuzy" />
+            <ref role="3PAiSJ" node="6k$Vo2GpukD" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBK" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8ic" role="3PmKTV">
             <property role="39558G" value="-2" />
             <property role="39558J" value="-1" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpuzz" />
+            <ref role="3PAiSJ" node="6k$Vo2GpukE" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBL" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8id" role="3PmKTV">
             <property role="39558G" value="-2" />
             <property role="39558J" value="0" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpuz$" />
+            <ref role="3PAiSJ" node="6k$Vo2GpukF" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBM" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8ie" role="3PmKTV">
             <property role="39558G" value="-2" />
             <property role="39558J" value="1" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpuz_" />
+            <ref role="3PAiSJ" node="6k$Vo2GpukG" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBN" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8if" role="3PmKTV">
             <property role="39558G" value="-2" />
             <property role="39558J" value="2" />
-            <ref role="3PAiSJ" node="6k$Vo2GpuzA" />
+            <ref role="3PAiSJ" node="6k$Vo2GpukH" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBO" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8ig" role="3PmKTV">
             <property role="39558G" value="-2" />
             <property role="39558J" value="3" />
-            <ref role="3PAiSJ" node="6k$Vo2GpuzB" />
+            <ref role="3PAiSJ" node="6k$Vo2GpukI" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBP" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8ih" role="3PmKTV">
             <property role="39558G" value="-2" />
             <property role="39558J" value="4" />
-            <ref role="3PAiSJ" node="6k$Vo2GpuzC" />
+            <ref role="3PAiSJ" node="6k$Vo2GpukJ" />
           </node>
         </node>
-        <node concept="3PmKT6" id="6k$Vo2GpvBQ" role="3PmKT5">
-          <node concept="3PAiSC" id="6k$Vo2GpvBR" role="3PmKTV">
+        <node concept="3PmKT6" id="6k$Vo2Gt8ii" role="3PmKT5">
+          <node concept="3PAiSC" id="6k$Vo2Gt8ij" role="3PmKTV">
             <property role="39558G" value="-1" />
             <property role="39558J" value="-4" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu$2" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpul9" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBS" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8ik" role="3PmKTV">
             <property role="39558G" value="-1" />
             <property role="39558J" value="-3" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu$3" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpula" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBT" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8il" role="3PmKTV">
             <property role="39558G" value="-1" />
             <property role="39558J" value="-2" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu$4" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpulb" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBU" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8im" role="3PmKTV">
             <property role="39558G" value="-1" />
             <property role="39558J" value="-1" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu$5" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpulc" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBV" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8in" role="3PmKTV">
             <property role="39558G" value="-1" />
             <property role="39558J" value="0" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu$6" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpuld" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBW" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8io" role="3PmKTV">
             <property role="39558G" value="-1" />
             <property role="39558J" value="1" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu$7" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpule" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBX" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8ip" role="3PmKTV">
             <property role="39558G" value="-1" />
             <property role="39558J" value="2" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu$8" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpulf" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBY" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iq" role="3PmKTV">
             <property role="39558G" value="-1" />
             <property role="39558J" value="3" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu$9" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpulg" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvBZ" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8ir" role="3PmKTV">
             <property role="39558G" value="-1" />
             <property role="39558J" value="4" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu$a" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpulh" />
           </node>
         </node>
-        <node concept="3PmKT6" id="6k$Vo2GpvC0" role="3PmKT5">
-          <node concept="3PAiSC" id="6k$Vo2GpvC1" role="3PmKTV">
+        <node concept="3PmKT6" id="6k$Vo2Gt8is" role="3PmKT5">
+          <node concept="3PAiSC" id="6k$Vo2Gt8it" role="3PmKTV">
             <property role="39558G" value="0" />
             <property role="39558J" value="-4" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu$$" />
+            <ref role="3PAiSJ" node="6k$Vo2GpulF" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvC2" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iu" role="3PmKTV">
             <property role="39558G" value="0" />
             <property role="39558J" value="-3" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu$_" />
+            <ref role="3PAiSJ" node="6k$Vo2GpulG" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvC3" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iv" role="3PmKTV">
             <property role="39558G" value="0" />
             <property role="39558J" value="-2" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu$A" />
+            <ref role="3PAiSJ" node="6k$Vo2GpulH" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvC4" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iw" role="3PmKTV">
             <property role="39558G" value="0" />
             <property role="39558J" value="-1" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu$B" />
+            <ref role="3PAiSJ" node="6k$Vo2GpulI" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvC5" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8ix" role="3PmKTV">
             <property role="39558G" value="0" />
             <property role="39558J" value="0" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu$C" />
+            <property role="39it9H" value="true" />
+            <ref role="3PAiSJ" node="6k$Vo2GpulJ" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvC6" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iy" role="3PmKTV">
             <property role="39558G" value="0" />
             <property role="39558J" value="1" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu$D" />
+            <ref role="3PAiSJ" node="6k$Vo2GpulK" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvC7" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iz" role="3PmKTV">
             <property role="39558G" value="0" />
             <property role="39558J" value="2" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu$E" />
+            <ref role="3PAiSJ" node="6k$Vo2GpulL" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvC8" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8i$" role="3PmKTV">
             <property role="39558G" value="0" />
             <property role="39558J" value="3" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu$F" />
+            <ref role="3PAiSJ" node="6k$Vo2GpulM" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvC9" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8i_" role="3PmKTV">
             <property role="39558G" value="0" />
             <property role="39558J" value="4" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu$G" />
+            <ref role="3PAiSJ" node="6k$Vo2GpulN" />
           </node>
         </node>
-        <node concept="3PmKT6" id="6k$Vo2GpvCa" role="3PmKT5">
-          <node concept="3PAiSC" id="6k$Vo2GpvCb" role="3PmKTV">
+        <node concept="3PmKT6" id="6k$Vo2Gt8iA" role="3PmKT5">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iB" role="3PmKTV">
             <property role="39558G" value="1" />
             <property role="39558J" value="-4" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu_6" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpumd" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCc" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iC" role="3PmKTV">
             <property role="39558G" value="1" />
             <property role="39558J" value="-3" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu_7" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpume" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCd" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iD" role="3PmKTV">
             <property role="39558G" value="1" />
             <property role="39558J" value="-2" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu_8" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpumf" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCe" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iE" role="3PmKTV">
             <property role="39558G" value="1" />
             <property role="39558J" value="-1" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu_9" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpumg" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCf" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iF" role="3PmKTV">
             <property role="39558G" value="1" />
             <property role="39558J" value="0" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu_a" />
+            <property role="39it9M" value="true" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpumh" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCg" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iG" role="3PmKTV">
             <property role="39558G" value="1" />
             <property role="39558J" value="1" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu_b" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpumi" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCh" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iH" role="3PmKTV">
             <property role="39558G" value="1" />
             <property role="39558J" value="2" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu_c" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpumj" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCi" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iI" role="3PmKTV">
             <property role="39558G" value="1" />
             <property role="39558J" value="3" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu_d" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpumk" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCj" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iJ" role="3PmKTV">
             <property role="39558G" value="1" />
             <property role="39558J" value="4" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu_e" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpuml" />
           </node>
         </node>
-        <node concept="3PmKT6" id="6k$Vo2GpvCk" role="3PmKT5">
-          <node concept="3PAiSC" id="6k$Vo2GpvCl" role="3PmKTV">
+        <node concept="3PmKT6" id="6k$Vo2Gt8iK" role="3PmKT5">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iL" role="3PmKTV">
             <property role="39558G" value="2" />
             <property role="39558J" value="-4" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu_C" />
+            <ref role="3PAiSJ" node="6k$Vo2GpumJ" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCm" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iM" role="3PmKTV">
             <property role="39558G" value="2" />
             <property role="39558J" value="-3" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu_D" />
+            <ref role="3PAiSJ" node="6k$Vo2GpumK" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCn" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iN" role="3PmKTV">
             <property role="39558G" value="2" />
             <property role="39558J" value="-2" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu_E" />
+            <ref role="3PAiSJ" node="6k$Vo2GpumL" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCo" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iO" role="3PmKTV">
             <property role="39558G" value="2" />
             <property role="39558J" value="-1" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu_F" />
+            <ref role="3PAiSJ" node="6k$Vo2GpumM" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCp" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iP" role="3PmKTV">
             <property role="39558G" value="2" />
             <property role="39558J" value="0" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu_G" />
+            <ref role="3PAiSJ" node="6k$Vo2GpumN" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCq" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iQ" role="3PmKTV">
             <property role="39558G" value="2" />
             <property role="39558J" value="1" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu_H" />
+            <ref role="3PAiSJ" node="6k$Vo2GpumO" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCr" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iR" role="3PmKTV">
             <property role="39558G" value="2" />
             <property role="39558J" value="2" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu_I" />
+            <ref role="3PAiSJ" node="6k$Vo2GpumP" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCs" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iS" role="3PmKTV">
             <property role="39558G" value="2" />
             <property role="39558J" value="3" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu_J" />
+            <ref role="3PAiSJ" node="6k$Vo2GpumQ" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCt" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iT" role="3PmKTV">
             <property role="39558G" value="2" />
             <property role="39558J" value="4" />
-            <ref role="3PAiSJ" node="6k$Vo2Gpu_K" />
+            <ref role="3PAiSJ" node="6k$Vo2GpumR" />
           </node>
         </node>
-        <node concept="3PmKT6" id="6k$Vo2GpvCu" role="3PmKT5">
-          <node concept="3PAiSC" id="6k$Vo2GpvCv" role="3PmKTV">
+        <node concept="3PmKT6" id="6k$Vo2Gt8iU" role="3PmKT5">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iV" role="3PmKTV">
             <property role="39558G" value="3" />
             <property role="39558J" value="-4" />
-            <ref role="3PAiSJ" node="6k$Vo2GpuAa" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpunh" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCw" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iW" role="3PmKTV">
             <property role="39558G" value="3" />
             <property role="39558J" value="-3" />
-            <ref role="3PAiSJ" node="6k$Vo2GpuAb" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpuni" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCx" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iX" role="3PmKTV">
             <property role="39558G" value="3" />
             <property role="39558J" value="-2" />
-            <ref role="3PAiSJ" node="6k$Vo2GpuAc" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpunj" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCy" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iY" role="3PmKTV">
             <property role="39558G" value="3" />
             <property role="39558J" value="-1" />
-            <ref role="3PAiSJ" node="6k$Vo2GpuAd" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpunk" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCz" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8iZ" role="3PmKTV">
             <property role="39558G" value="3" />
             <property role="39558J" value="0" />
-            <ref role="3PAiSJ" node="6k$Vo2GpuAe" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpunl" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvC$" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8j0" role="3PmKTV">
             <property role="39558G" value="3" />
             <property role="39558J" value="1" />
-            <ref role="3PAiSJ" node="6k$Vo2GpuAf" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpunm" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvC_" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8j1" role="3PmKTV">
             <property role="39558G" value="3" />
             <property role="39558J" value="2" />
-            <ref role="3PAiSJ" node="6k$Vo2GpuAg" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpunn" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCA" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8j2" role="3PmKTV">
             <property role="39558G" value="3" />
             <property role="39558J" value="3" />
-            <ref role="3PAiSJ" node="6k$Vo2GpuAh" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpuno" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCB" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8j3" role="3PmKTV">
             <property role="39558G" value="3" />
             <property role="39558J" value="4" />
-            <ref role="3PAiSJ" node="6k$Vo2GpuAi" />
+            <ref role="3PAiSJ" node="6k$Vo2Gpunp" />
           </node>
         </node>
-        <node concept="3PmKT6" id="6k$Vo2GpvCC" role="3PmKT5">
-          <node concept="3PAiSC" id="6k$Vo2GpvCD" role="3PmKTV">
+        <node concept="3PmKT6" id="6k$Vo2Gt8j4" role="3PmKT5">
+          <node concept="3PAiSC" id="6k$Vo2Gt8j5" role="3PmKTV">
             <property role="39558G" value="4" />
             <property role="39558J" value="-4" />
-            <ref role="3PAiSJ" node="6k$Vo2GpuAG" />
+            <ref role="3PAiSJ" node="6k$Vo2GpunN" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCE" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8j6" role="3PmKTV">
             <property role="39558G" value="4" />
             <property role="39558J" value="-3" />
-            <ref role="3PAiSJ" node="6k$Vo2GpuAH" />
+            <ref role="3PAiSJ" node="6k$Vo2GpunO" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCF" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8j7" role="3PmKTV">
             <property role="39558G" value="4" />
             <property role="39558J" value="-2" />
-            <ref role="3PAiSJ" node="6k$Vo2GpuAI" />
+            <ref role="3PAiSJ" node="6k$Vo2GpunP" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCG" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8j8" role="3PmKTV">
             <property role="39558G" value="4" />
             <property role="39558J" value="-1" />
-            <ref role="3PAiSJ" node="6k$Vo2GpuAJ" />
+            <ref role="3PAiSJ" node="6k$Vo2GpunQ" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCH" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8j9" role="3PmKTV">
             <property role="39558G" value="4" />
             <property role="39558J" value="0" />
-            <ref role="3PAiSJ" node="6k$Vo2GpuAK" />
+            <ref role="3PAiSJ" node="6k$Vo2GpunR" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCI" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8ja" role="3PmKTV">
             <property role="39558G" value="4" />
             <property role="39558J" value="1" />
-            <ref role="3PAiSJ" node="6k$Vo2GpuAL" />
+            <ref role="3PAiSJ" node="6k$Vo2GpunS" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCJ" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8jb" role="3PmKTV">
             <property role="39558G" value="4" />
             <property role="39558J" value="2" />
-            <ref role="3PAiSJ" node="6k$Vo2GpuAM" />
+            <ref role="3PAiSJ" node="6k$Vo2GpunT" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCK" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8jc" role="3PmKTV">
             <property role="39558G" value="4" />
             <property role="39558J" value="3" />
-            <ref role="3PAiSJ" node="6k$Vo2GpuAN" />
+            <ref role="3PAiSJ" node="6k$Vo2GpunU" />
           </node>
-          <node concept="3PAiSC" id="6k$Vo2GpvCL" role="3PmKTV">
+          <node concept="3PAiSC" id="6k$Vo2Gt8jd" role="3PmKTV">
             <property role="39558G" value="4" />
             <property role="39558J" value="4" />
-            <ref role="3PAiSJ" node="6k$Vo2GpuAO" />
+            <ref role="3PAiSJ" node="6k$Vo2GpunV" />
           </node>
         </node>
       </node>
