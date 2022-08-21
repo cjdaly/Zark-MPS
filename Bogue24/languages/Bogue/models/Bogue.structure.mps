@@ -67,6 +67,12 @@
       <property role="20kJfa" value="map" />
       <ref role="20lvS9" node="5zY_8ZF4EWV" resolve="Map" />
     </node>
+    <node concept="1TJgyj" id="5pR_rgUdfrM" role="1TKVEi">
+      <property role="IQ2ns" value="6230613210793572082" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="state" />
+      <ref role="20lvS9" node="5pR_rgUd42X" resolve="GameState" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5zY_8ZF4EWV">
     <property role="EcuMT" value="6412726265267269435" />
@@ -103,7 +109,7 @@
       <property role="IQ2ns" value="7288211233896512162" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="state" />
-      <ref role="20lvS9" node="6k$Vo2GqrEj" resolve="GameState" />
+      <ref role="20lvS9" node="6k$Vo2GqrEj" resolve="MapState" />
     </node>
     <node concept="1TJgyi" id="1mcXNrSZyC" role="1TKVEl">
       <property role="IQ2nx" value="24263871672088744" />
@@ -307,7 +313,7 @@
   </node>
   <node concept="1TIwiD" id="6k$Vo2GqrEj">
     <property role="EcuMT" value="7288211233896512147" />
-    <property role="TrG5h" value="GameState" />
+    <property role="TrG5h" value="MapState" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
     <node concept="1TJgyi" id="6k$Vo2GqrEk" role="1TKVEl">
       <property role="IQ2nx" value="7288211233896512148" />
@@ -329,9 +335,29 @@
       <property role="TrG5h" value="exitY" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
-    <node concept="1TJgyi" id="1m3bLstbYZW" role="1TKVEl">
-      <property role="IQ2nx" value="1550134473066016764" />
+    <node concept="1TJgyi" id="5pR_rgU7YOq" role="1TKVEl">
+      <property role="IQ2nx" value="6230613210792193306" />
+      <property role="TrG5h" value="status" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5pR_rgUd42X">
+    <property role="EcuMT" value="6230613210793525437" />
+    <property role="TrG5h" value="GameState" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyi" id="5pR_rgUd856" role="1TKVEl">
+      <property role="IQ2nx" value="6230613210793541958" />
       <property role="TrG5h" value="mode" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="5pR_rgUd858" role="1TKVEl">
+      <property role="IQ2nx" value="6230613210793541960" />
+      <property role="TrG5h" value="level" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="5pR_rgUd85b" role="1TKVEl">
+      <property role="IQ2nx" value="6230613210793541963" />
+      <property role="TrG5h" value="treasures" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
