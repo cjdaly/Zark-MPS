@@ -241,6 +241,11 @@
       <property role="20kJfa" value="tile" />
       <ref role="20lvS9" node="5zY_8ZF4EWW" resolve="Tile" />
     </node>
+    <node concept="1TJgyj" id="4a6C1OKzYm8" role="1TKVEi">
+      <property role="IQ2ns" value="4793694900611704200" />
+      <property role="20kJfa" value="treasure" />
+      <ref role="20lvS9" node="4a6C1OKzYm0" resolve="Treasure" />
+    </node>
     <node concept="1TJgyi" id="6k$Vo2GcbYG" role="1TKVEl">
       <property role="IQ2nx" value="7288211233892777900" />
       <property role="TrG5h" value="x" />
@@ -340,6 +345,13 @@
       <property role="TrG5h" value="status" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
+    <node concept="1TJgyj" id="4a6C1OKzYm6" role="1TKVEi">
+      <property role="IQ2ns" value="4793694900611704198" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="treasures" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="4a6C1OKzYm0" resolve="Treasure" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5pR_rgUd42X">
     <property role="EcuMT" value="6230613210793525437" />
@@ -358,6 +370,21 @@
     <node concept="1TJgyi" id="5pR_rgUd85b" role="1TKVEl">
       <property role="IQ2nx" value="6230613210793541963" />
       <property role="TrG5h" value="treasures" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4a6C1OKzYm0">
+    <property role="EcuMT" value="4793694900611704192" />
+    <property role="TrG5h" value="Treasure" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyi" id="4a6C1OKzYm1" role="1TKVEl">
+      <property role="IQ2nx" value="4793694900611704193" />
+      <property role="TrG5h" value="x" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="4a6C1OKzYm3" role="1TKVEl">
+      <property role="IQ2nx" value="4793694900611704195" />
+      <property role="TrG5h" value="y" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>

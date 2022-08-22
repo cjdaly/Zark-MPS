@@ -344,6 +344,30 @@
             <property role="VOm3f" value="true" />
           </node>
         </node>
+        <node concept="3F0ifn" id="5385RgOBF2s" role="3EZMnx">
+          <property role="3F0ifm" value="~~~ " />
+          <node concept="xShMh" id="5385RgOBF3V" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="5385RgOBF34" role="3EZMnx">
+          <property role="3F0ifm" value="treasures:" />
+        </node>
+        <node concept="1iCGBv" id="5385RgOBF3w" role="3EZMnx">
+          <ref role="1NtTu8" to="32g1:5pR_rgUdfrM" resolve="state" />
+          <node concept="1sVBvm" id="5385RgOBF3y" role="1sWHZn">
+            <node concept="3F0A7n" id="5385RgOBF3S" role="2wV5jI">
+              <property role="1Intyy" value="true" />
+              <ref role="1NtTu8" to="32g1:5pR_rgUd85b" resolve="treasures" />
+              <node concept="xShMh" id="5385RgOBF3Z" role="3F10Kt">
+                <property role="VOm3f" value="true" />
+              </node>
+            </node>
+          </node>
+          <node concept="xShMh" id="5385RgOBF3X" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
       </node>
       <node concept="3F1sOY" id="4QISlISVosl" role="3EZMnx">
         <ref role="1NtTu8" to="32g1:5zY_8ZF4EWY" resolve="map" />
