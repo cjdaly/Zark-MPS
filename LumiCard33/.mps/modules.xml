@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MPSProject">
+    <projectModules>
+      <modulePath path="$PROJECT_DIR$/languages/LumiCard/LumiCard.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/LumiCard/sandbox/LumiCard.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/LumiCardView/LumiCardView.mpl" folder="" />
+    </projectModules>
+  </component>
+</project>
